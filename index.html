@@ -12,272 +12,266 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
-:root{
-  --bg1: #1a1520;
-  --accentA: #9b5de5;
-  --accentB: #f15bb5;
-  --accentC: #ffd166;
-  --card-bg: rgba(255,255,255,0.04);
-  --glass: rgba(255,255,255,0.04);
-  --text: #f3f4f6;
-  --muted: #d1d5db;
-  --radius: 14px;
-}
-
-/* ---------- General ---------- */
-body{
-  margin:0;
-  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: linear-gradient(160deg, #0f1724 0%, #151827 20%, #20122a 60%, #40184a 100%);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  overflow-x:hidden;
-}
-
-.wrap{max-width:1000px;margin:0 auto;padding:28px;}
-
-/* ---------- HERO ---------- */
-.hero{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:18px;
-  text-align:center;
-  padding:36px 20px;
-  margin-top:10px;
-  border-radius:18px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  box-shadow: 0 10px 40px rgba(2,6,23,0.6);
-  animation: fadeInUp 1s ease forwards;
-}
-
-.title {
-  font-size: clamp(28px, 5vw, 46px);
-  line-height:1.02;
-  font-weight:800;
-  letter-spacing:-0.02em;
-  background: linear-gradient(270deg,#ffffff 0%, #FFF500 35%, #f15bb5 65%, #9b5de5 100%);
-  background-size: 800% 800%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientMove 8s ease infinite;
-  margin:0;
-}
-
-@keyframes gradientMove{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-
-.subtitle{
-  color:var(--muted);
-  font-size: clamp(14px,2.4vw,18px);
-  max-width:820px;
-  margin:0 auto;
-  opacity:0;
-  transform:translateY(18px);
-  animation: fadeInUp 1s 0.3s ease forwards;
-}
-
-@keyframes fadeInUp {
-  to{
-    opacity:1;
-    transform:translateY(0);
+  :root{
+    --bg1: #1a1520;
+    --accentA: #9b5de5;
+    --accentB: #f15bb5;
+    --accentC: #ffd166;
+    --card-bg: rgba(255,255,255,0.04);
+    --glass: rgba(255,255,255,0.04);
+    --text: #f3f4f6;
+    --muted: #d1d5db;
+    --radius: 14px;
   }
-}
 
-.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:6px;opacity:0;animation:fadeInUp 1s 0.6s forwards;}
-.btn{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:16px 28px;border-radius:999px;
-  font-weight:700;text-decoration:none;color:#111;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  transform:translateZ(0);
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-.btn:active{transform:translateY(1px)}
-.btn-main{
-  background: linear-gradient(90deg,var(--accentA),var(--accentB));
-  color:white;
-}
-.btn-ghost{
-  background: linear-gradient(90deg,#a78bfa, #ffd1dc);
-  color:#1b0b1d;
-  opacity:0.95;
-}
-.btn:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,0.35)}
+  body{
+    margin:0;
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(160deg, #0f1724 0%, #151827 20%, #20122a 60%, #40184a 100%);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-x:hidden;
+  }
 
-/* ---------- SECTIONS ---------- */
-.card{
-  margin-top:26px;
-  background:var(--card-bg);
-  padding:22px;border-radius:var(--radius);
-  box-shadow: 0 6px 22px rgba(3,6,23,0.5);
-  backdrop-filter: blur(4px);
-  opacity:0;
-  transform:translateY(18px);
-  animation:fadeInUp 1s ease forwards;
-}
+  .wrap{max-width:1000px;margin:0 auto;padding:28px;}
 
-h2.section-title{
-  font-size: clamp(20px,3.6vw,28px);
-  margin:4px 0 14px 0;
-  color:var(--text);
-}
+  .hero{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+    text-align:center;
+    padding:36px 20px;
+    margin-top:10px;
+    border-radius:18px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    box-shadow: 0 10px 40px rgba(2,6,23,0.6);
+  }
 
-.text-muted{color:var(--muted);font-size:15px;line-height:1.5}
+  .title {
+    font-size: clamp(28px, 5vw, 46px);
+    line-height:1.02;
+    font-weight:800;
+    letter-spacing:-0.02em;
+    background: linear-gradient(270deg,#ffffff 0%, #FFF500 35%, #f15bb5 65%, #9b5de5 100%);
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 8s ease infinite;
+    margin:0;
+  }
 
-/* benefits grid */
-.grid{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:18px;
-}
-.benefit{
-  display:flex;gap:12px;align-items:flex-start;
-}
-.ico{
-  background:linear-gradient(180deg,#fff, rgba(255,255,255,0.06));
-  color:#1b0b1d;padding:10px;border-radius:12px;font-size:18px;width:46px;height:46px;display:flex;align-items:center;justify-content:center;
-}
-.benefit p{margin:0;color:var(--muted);font-weight:600}
+  @keyframes gradientMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
 
-/* single column on mobile */
-@media (max-width:720px){
-  .grid{grid-template-columns:1fr}
-  .wrap{padding:16px}
-}
+  .subtitle{color:var(--muted); font-size: clamp(14px,2.4vw,18px); max-width:820px; margin:0 auto;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+  .btn{display:inline-flex;align-items:center;gap:10px; padding:16px 28px;border-radius:999px; font-weight:700;text-decoration:none; color:#111; box-shadow: 0 6px 18px rgba(0,0,0,0.25); transform:translateZ(0); transition: transform .18s ease, box-shadow .18s ease;}
+  .btn:active{transform:translateY(1px)}
+  .btn-main{background: linear-gradient(90deg,var(--accentA),var(--accentB)); color:white;}
+  .btn-ghost{background: linear-gradient(90deg,#a78bfa, #ffd1dc); color:#1b0b1d; opacity:0.95;}
+  .btn:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,0.35)}
 
-/* ---------- TESTIMONIOS / COLLAGES ---------- */
-.collage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
-.collage{
-  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  padding:8px;border-radius:12px;min-height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;
-  transition:transform .26s ease, box-shadow .26s ease, opacity .6s ease;
-}
-.collage img{width:100%;height:100%;object-fit:cover;border-radius:8px;display:block}
-.collage:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 18px 40px rgba(0,0,0,0.45)}
-@media (max-width:900px){ .collage-grid{grid-template-columns:repeat(2,1fr)} }
-@media (max-width:520px){ .collage-grid{grid-template-columns:1fr} }
+  .card{margin-top:26px; background:var(--card-bg); padding:22px;border-radius:var(--radius); box-shadow: 0 6px 22px rgba(3,6,23,0.5); backdrop-filter: blur(4px);}
+  h2.section-title{font-size: clamp(20px,3.6vw,28px); margin:4px 0 14px 0; color:var(--text);}
+  .text-muted{color:var(--muted);font-size:15px;line-height:1.5}
 
-/* ---------- PRICING / BONUSES ---------- */
-.pricing{
-  display:flex;gap:18px;align-items:stretch;flex-wrap:wrap;margin-top:14px;
-}
-.price-card{
-  flex:1 1 320px;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
-  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
-  transition: transform .3s ease, box-shadow .3s ease, opacity .6s ease;
-}
-.price-card:hover{
-  transform:translateY(-4px) scale(1.02);
-  box-shadow:0 20px 50px rgba(0,0,0,0.5);
-}
-.price-big{font-size:28px;font-weight:800;margin:6px 0;color:var(--accentC)}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  .benefit{display:flex;gap:12px;align-items:flex-start;}
+  .ico{background:linear-gradient(180deg,#fff, rgba(255,255,255,0.06)); color:#1b0b1d;padding:10px;border-radius:12px;font-size:18px;width:46px;height:46px;display:flex;align-items:center;justify-content:center;}
+  .benefit p{margin:0;color:var(--muted);font-weight:600}
+  @media (max-width:720px){.grid{grid-template-columns:1fr} .wrap{padding:16px}}
 
-/* ---------- FAQ (acordeón) ---------- */
-.faq-item{border-top:1px solid rgba(255,255,255,0.03);padding:12px 0;cursor:pointer}
-.faq-item .q{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.faq-item .q h4{margin:0;font-size:16px}
-.faq-item .a{max-height:0;overflow:hidden;transition:max-height .32s ease;padding-top:0}
-.faq-item.open .a{max-height:300px;padding-top:8px}
+  .collage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+  .collage{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:8px;border-radius:12px;min-height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden; transition:transform .26s ease, box-shadow .26s ease;}
+  .collage img{width:100%;height:100%;object-fit:cover;border-radius:8px;display:block}
+  .collage:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.45)}
+  @media (max-width:900px){ .collage-grid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:520px){ .collage-grid{grid-template-columns:1fr} }
 
-/* ---------- FLOATING CTA ---------- */
-.floating{
-  position:fixed;right:18px;bottom:18px;z-index:1200;
-}
-.floating a{
-  display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:999px;background:linear-gradient(90deg,var(--accentA),var(--accentB));
-  color:white;font-weight:800;text-decoration:none;box-shadow:0 16px 40px rgba(0,0,0,0.45);
-}
+  .pricing{display:flex;gap:18px;align-items:stretch;flex-wrap:wrap;margin-top:14px;}
+  .price-card{flex:1 1 320px;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01)); box-shadow: 0 12px 40px rgba(0,0,0,0.45);}
+  .price-big{font-size:28px;font-weight:800;margin:6px 0;color:var(--accentC)}
 
-/* ---------- small helpers ---------- */
-.muted{color:var(--muted)}
-.center{text-align:center}
-.pill{display:inline-block;background:linear-gradient(90deg,#fff0 20%, rgba(255,255,255,0.02));padding:8px 12px;border-radius:999px;font-weight:700;color:var(--text)}
+  .faq-item{border-top:1px solid rgba(255,255,255,0.03);padding:12px 0;cursor:pointer}
+  .faq-item .q{display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .faq-item .q h4{margin:0;font-size:16px}
+  .faq-item .a{max-height:0;overflow:hidden;transition:max-height .32s ease;padding-top:0}
+  .faq-item.open .a{max-height:300px;padding-top:8px}
 
-/* ---------- Contador ---------- */
-.countdown{
-  display:flex;
-  justify-content:center;
-  gap:16px;
-  font-size:24px;
-  font-weight:700;
-  margin:12px 0;
-  flex-wrap:wrap;
-}
-.countdown div{
-  background: linear-gradient(90deg,var(--accentC),var(--accentB));
-  padding:12px 18px;
-  border-radius:12px;
-  min-width:64px;
-  text-align:center;
-  box-shadow:0 4px 14px rgba(0,0,0,0.25);
-  color:#1b0b1d;
-}
-.countdown span{display:block;font-size:14px;font-weight:600;color:#1b0b1d;}
+  .floating{position:fixed;right:18px;bottom:18px;z-index:1200;}
+  .floating a{display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:999px;background:linear-gradient(90deg,var(--accentA),var(--accentB)); color:white;font-weight:800;text-decoration:none;box-shadow:0 16px 40px rgba(0,0,0,0.45);}
 
+  .muted{color:var(--muted)}
+  .center{text-align:center}
+  .pill{display:inline-block;background:linear-gradient(90deg,#fff0 20%, rgba(255,255,255,0.02));padding:8px 12px;border-radius:999px;font-weight:700;color:var(--text)}
 </style>
 </head>
 <body>
 
 <div class="wrap">
 
-  <!-- HERO -->
-  <section class="hero card" aria-label="Hero">
-    <h1 class="title">Deja de Perder Tiempo en Negocios que No Funcionan</h1>
-    <p class="subtitle">Genera <strong>$2,500–$5,100 USD</strong> al mes con sistemas de alarmas. Aprende paso a paso cómo montar tu negocio de alarmas inalámbricas, incluso sin experiencia técnica, y empieza a generar ingresos extra trabajando solo los fines de semana.</p>
+<!-- HERO CON CONTADOR -->
+<section class="hero card" aria-label="Hero">
+  <h1 class="title">Deja de Perder Tiempo en Negocios que No Funcionan</h1>
+  <p class="subtitle">Genera <strong>$2,500–$5,100 USD</strong> al mes con sistemas de alarmas. Aprende paso a paso cómo montar tu negocio de alarmas inalámbricas, incluso sin experiencia técnica.</p>
 
-    <div class="hero-ctas">
-      <a class="btn btn-main" href="https://buy.stripe.com/3cI4gAfzg9Xz9WVdtAds400?utm_source=web&utm_medium=button&utm_campaign=lanzamiento_taller&utm_content=boton1"><i class="fa-solid fa-rocket"></i> 🚀 Quiero empezar ahora</a>
-      <a class="btn btn-ghost" href="#presentacion"><i class="fa-solid fa-circle-info"></i> Más detalles del curso</a>
+  <div style="margin:18px 0;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;font-weight:800;color:var(--accentC);font-size:20px;">
+    <div>⏰ <span id="days">0</span> días</div>
+    <div><span id="hours">0</span> horas</div>
+    <div><span id="minutes">0</span> min</div>
+    <div><span id="seconds">0</span> seg</div>
+  </div>
+
+  <div class="hero-ctas">
+    <a class="btn btn-main" href="https://buy.stripe.com/3cI4gAfzg9Xz9WVdtAds400?utm_source=web&utm_medium=button&utm_campaign=lanzamiento_taller&utm_content=boton1"><i class="fa-solid fa-rocket"></i> 🚀 Quiero empezar ahora</a>
+    <a class="btn btn-ghost" href="#presentacion"><i class="fa-solid fa-circle-info"></i> Más detalles del curso</a>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section class="card">
+<h2 class="section-title">Por qué funciona este negocio</h2>
+<div class="grid">
+  <div class="benefit"><div class="ico">🔒</div><p>Resuelve un problema urgente: la seguridad es una necesidad básica que nunca desaparece.</p></div>
+  <div class="benefit"><div class="ico">⚙️</div><p>Tú controlas todo el proceso: no dependes de algoritmos, tendencias o suerte.</p></div>
+  <div class="benefit"><div class="ico">💰</div><p>Clientes listos para pagar: la gente necesita seguridad ahora y está dispuesta a invertir.</p></div>
+  <div class="benefit"><div class="ico">🚀</div><p>Escalable: empieza solo y crece hasta tener tu propio equipo.</p></div>
+  <div class="benefit"><div class="ico">⚡</div><p>Rápido y sencillo: con tecnología inalámbrica moderna, una instalación que antes tomaba 2 días ahora se hace en 3–4 horas.</p></div>
+</div>
+</section>
+
+<!-- Curso / CTA -->
+<section id="presentacion" class="card center">
+<h2 class="section-title">Sistema completo: Curso “Negocio de Alarmas Desde Cero”</h2>
+<div style="display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap;justify-content:center;">
+  <div style="flex:1 1 420px;min-width:280px;">
+    <ul>
+      <li>🎯 Más de 60 manuales de procedimientos completos</li>
+      <li>🎯 25+ videos explicativos para no técnicos</li>
+      <li>🎯 Sistema 100% inalámbrico profesional</li>
+      <li>🎯 Mi modelo de negocio exacto</li>
+      <li>🎯 Soporte directo personalizado</li>
+      <li>🎯 Desde cero hasta profesional</li>
+    </ul>
+  </div>
+  <div style="flex:0 0 320px;">
+    <div class="price-card">
+      <div class="muted">💎 El sistema completo que me genera</div>
+      <div class="price-big">$2,500–$5,100 USD/mes</div>
+      <div class="muted">Solo 12 espacios disponibles este mes + Bonos que valen $647</div>
+      <div style="height:12px"></div>
+      <a id="inscribirme" class="btn btn-main" href="https://buy.stripe.com/3cI4gAfzg9Xz9WVdtAds400?utm_source=web&utm_medium=button&utm_campaign=lanzamiento_taller&utm_content=boton2" style="display:block;text-align:center">👉 Reservar mi lugar ahora</a>
     </div>
+  </div>
+</div>
+</section>
 
-    <!-- Contador -->
-    <div class="countdown">
-      <div><span id="days">0</span>Días</div>
-      <div><span id="hours">0</span>Horas</div>
-      <div><span id="minutes">0</span>Min</div>
-      <div><span id="seconds">0</span>Seg</div>
-    </div>
-  </section>
+<!-- Pricing / Bonos -->
+<section class="card">
+<h2 class="section-title">Presentación oficial</h2>
+<div class="pricing">
+  <div class="price-card">
+    <div style="font-weight:800">“SISTEMA PROFESIONAL DE ALARMAS: DE CERO A EXPERTO”</div>
+    <div class="muted">Precio lanzamiento: $497 USD (luego $997–$1,997 USD)</div>
+    <div style="height:8px"></div>
+    <p class="muted">Incluye 25+ videos explicativos, 60+ manuales, soporte y modelo de negocio completo.</p>
+  </div>
+  <div class="price-card">
+    <div style="font-weight:700;color:var(--accentC)">Bonos especiales (solo primeros 12 estudiantes)</div>
+    <ul style="margin-top:8px">
+      <li>🎁 Masterclass venta e instalación cámaras IP & HD-TVI (valor $197)</li>
+      <li>🎁 Masterclass controles de acceso negocios (valor $197)</li>
+      <li>🎁 Certificado de aptitudes (obsequio)</li>
+    </ul>
+    <div style="height:10px"></div>
+    <div style="font-weight:700">🔥 Valor total: <s style="color:rgba(255,255,255,0.3)">$647</s></div>
+    <div style="font-size:22px;font-weight:900;color:var(--accentC)">$497 USD</div>
+    <div style="height:10px"></div>
+    <a class="btn btn-main" href="https://buy.stripe.com/3cI4gAfzg9Xz9WVdtAds400?utm_source=web&utm_medium=button&utm_campaign=lanzamiento_taller&utm_content=boton3" style="display:block;text-align:center;margin-top:8px">🛒 Inscribirme ahora y obtener los bonos</a>
+  </div>
+</div>
+</section>
 
-  <!-- Aquí continuarían todos los demás bloques de beneficios, curso, testimonios, precios y FAQ, igual que antes, pero con animaciones de entrada fadeInUp, hover en cards, emojis en los beneficios y bonos, garantía 60 días, y links de Stripe con UTMs. -->
+<!-- Garantía -->
+<section class="card">
+<h2 class="section-title">✅ Garantía Total de 60 días</h2>
+<p class="text-muted">Si en 60 días sigues el sistema completo y no consigues tu primera instalación, te devuelvo el 100% de tu dinero. Además, las sesiones Q&A serán semanales el primer mes y luego cada 15 días. Dinámicas de desempeño por mes para mantener tu progreso.</p>
+</section>
 
-  <!-- CTA final -->
-  <section id="reserve" class="card center">
-    <h2 class="section-title">✅ Solo 12 estudiantes — Reserva tu lugar</h2>
-    <p class="muted">Importante: solo aceptaré 12 estudiantes durante este lanzamiento para poder dar soporte personal de calidad.</p>
+<!-- FAQ -->
+<section class="card">
+<h2 class="section-title">Preguntas frecuentes</h2>
+<div id="faq">
+  <div class="faq-item">
+    <div class="q"><h4>¿Necesito experiencia técnica?</h4><div class="muted"><i class="fa-solid fa-chevron-down"></i></div></div>
+    <div class="a"><p class="muted">No, el curso está diseñado para principiantes.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="q"><h4>¿Cuánto puedo ganar?</h4><div class="muted"><i class="fa-solid fa-chevron-down"></i></div></div>
+    <div class="a"><p class="muted">Entre $800 y $1,500 USD extra al mes trabajando solo fines de semana. Con compromiso, puedes escalar hasta $4,000–$6,000 USD mensuales.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="q"><h4>¿Necesito invertir mucho?</h4><div class="muted"><i class="fa-solid fa-chevron-down"></i></div></div>
+    <div class="a"><p class="muted">Menos de $200 USD en herramientas y equipos iniciales.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="q"><h4>¿Cómo accedo al curso?</h4><div class="muted"><i class="fa-solid fa-chevron-down"></i></div></div>
+    <div class="a"><p class="muted">Acceso inmediato a todos los módulos online. Las sesiones en vivo se avisarán mediante el grupo de WhatsApp de miembros. El curso puede actualizarse con mejoras en el tiempo.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="q"><h4>¿Cuándo comienza el curso?</h4><div class="muted"><i class="fa-solid fa-chevron-down"></i></div></div>
+    <div class="a"><p class="muted">Obtendrás acceso inmediato a las clases pregrabadas. Las sesiones en vivo se agendarán y avisarán por el grupo de WhatsApp.</p></div>
+  </div>
+</div>
+</section>
 
-    <div style="max-width:520px;margin:18px auto">
-      <a class="btn btn-main" href="https://buy.stripe.com/3cI4gAfzg9Xz9WVdtAds400?utm_source=web&utm_medium=button&utm_campaign=lanzamiento_taller&utm_content=boton2" target="_blank" rel="noopener noreferrer">✅ Quiero uno de los 12 lugares</a>
-      <div style="height:10px"></div>
-      <a class="btn btn-ghost" href="mailto:cursodealarmas88@gmail.com?subject=Más%20info%20curso" style="display:inline-block;margin-top:8px">💬 Quiero más información</a>
-    </div>
-  </section>
+<!-- Reserve / CTA final -->
+<section id="reserve" class="card center">
+<h2 class="section-title">✅ Solo 12 estudiantes — Reserva tu lugar</h2>
+<p class="muted">Importante: solo aceptaré 12 estudiantes durante este lanzamiento. No dejes pasar tu oportunidad.</p>
+<a class="btn btn-main" href="https://buy.stripe.com/3cI4gAfzg9Xz9WVdtAds400?utm_source=web&utm_medium=button&utm_campaign=lanzamiento_taller&utm_content=boton4" style="margin-top:12px;display:inline-block;">🚀 Reservar mi lugar ahora</a>
+</section>
 
 </div>
 
-<!-- floating CTA -->
+<!-- Floating Contact -->
 <div class="floating">
-  <a href="#reserve"><i class="fa-solid fa-bolt"></i> Reservar mi lugar</a>
+  <a href="mailto:cursodealarmas88@gmail.com"><i class="fa-solid fa-envelope"></i> Escríbeme</a>
 </div>
 
 <script>
   // Contador regresivo
-  const countdownDate = new Date("2025-10-25T23:59:59").getTime();
+  const countdownDate = new Date("2025-10-15T23:59:59").getTime();
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
+
   function updateCountdown(){
     const now = new Date().getTime();
     const distance = countdownDate - now;
-    const d = Math.max(Math.floor(distance / (1000*60*60*24)),0);
-    const h = Math.max(Math.floor((distance % (1000*60*60*24)) / (1000*60*60)),0);
-    const m = Math.max(Math.floor((distance % (1000*60*60)) / (1000*60)),0);
-    const s = Math.max(Math.floor((distance % (1000*60)) / 1000),0);
-    document.getElementById("days").innerText = d;
-    document.getElementById("hours").innerText = h;
-    document.getElementById("minutes").innerText = m;
-    document.getElementById("seconds").innerText = s;
+
+    if(distance < 0){
+      daysEl.innerText = hoursEl.innerText = minutesEl.innerText = secondsEl.innerText = 0;
+      return;
+    }
+
+    const d = Math.floor(distance / (1000*60*60*24));
+    const h = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+    const m = Math.floor((distance % (1000*60*60)) / (1000*60));
+    const s = Math.floor((distance % (1000*60)) / 1000);
+
+    daysEl.innerText = d;
+    hoursEl.innerText = h;
+    minutesEl.innerText = m;
+    secondsEl.innerText = s;
   }
+
   setInterval(updateCountdown,1000);
   updateCountdown();
 
@@ -287,19 +281,6 @@ h2.section-title{
       item.classList.toggle("open");
     });
   });
-
-  // Lazy reveal collages
-  const collages = document.querySelectorAll('.collage');
-  const io = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        e.target.style.transform='translateY(0)';
-        e.target.style.opacity='1';
-      }
-    });
-  }, {threshold:0.15});
-  collages.forEach(c=>{ c.style.transform='translateY(18px)'; c.style.opacity='0'; io.observe(c); });
-
 </script>
 
 </body>
