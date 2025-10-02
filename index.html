@@ -8,367 +8,334 @@
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Font Awesome (iconos) -->
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
-  :root{
-    --bg1: #1a1520;            /* fallback dark */
-    --accentA: #9b5de5;        /* purple */
-    --accentB: #f15bb5;        /* pink */
-    --accentC: #ffd166;        /* yellow */
-    --card-bg: rgba(255,255,255,0.04);
-    --glass: rgba(255,255,255,0.04);
-    --text: #f3f4f6;
-    --muted: #d1d5db;
-    --radius: 14px;
-  }
+:root{
+  --bg1: #1a1520;
+  --accentA: #9b5de5; /* morado */
+  --accentB: #f15bb5; /* rosa */
+  --accentC: #ffd166; /* dorado */
+  --card-bg: rgba(255,255,255,0.04);
+  --glass: rgba(255,255,255,0.04);
+  --text: #f3f4f6;
+  --muted: #d1d5db;
+  --radius: 14px;
+}
 
-  /* Page background gradient similar to Carrd example but richer */
-  body{
-    margin:0;
-    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    background: linear-gradient(160deg, #0f1724 0%, #151827 20%, #20122a 60%, #40184a 100%);
-    color:var(--text);
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    overflow-x:hidden;
-  }
+body{
+  margin:0;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(160deg, #0f1724 0%, #151827 20%, #20122a 60%, #40184a 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
 
-  .wrap{max-width:1000px;margin:0 auto;padding:28px;}
+.wrap{max-width:1000px;margin:0 auto;padding:28px;}
 
-/* ---------- HERO ---------- */
-  .hero{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:18px;
-    text-align:center;
-    padding:36px 20px;
-    margin-top:10px;
-    border-radius:18px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    box-shadow: 0 10px 40px rgba(2,6,23,0.6);
-  }
+/* HERO */
+.hero{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+  text-align:center;
+  padding:36px 20px;
+  margin-top:10px;
+  border-radius:18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: 0 10px 40px rgba(2,6,23,0.6);
+}
 
-  /* animated gradient title */
-  .title {
-    font-size: clamp(28px, 5vw, 46px);
-    line-height:1.02;
-    font-weight:800;
-    letter-spacing:-0.02em;
-    background: linear-gradient(270deg,#ffffff 0%, #FFF500 35%, #f15bb5 65%, #9b5de5 100%);
-    background-size: 800% 800%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientMove 8s ease infinite;
-    margin:0;
-  }
+.title {
+  font-size: clamp(28px, 5vw, 46px);
+  line-height:1.02;
+  font-weight:800;
+  letter-spacing:-0.02em;
+  background: linear-gradient(270deg,#ffffff 0%, #FFF500 35%, #f15bb5 65%, #9b5de5 100%);
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 8s ease infinite;
+  margin:0;
+}
 
-  @keyframes gradientMove{
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-  }
+@keyframes gradientMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
 
-  .subtitle{
-    color:var(--muted);
-    font-size: clamp(14px,2.4vw,18px);
-    max-width:820px;
-    margin:0 auto;
-  }
+.subtitle{
+  color:var(--muted);
+  font-size: clamp(14px,2.4vw,18px);
+  max-width:820px;
+  margin:0 auto;
+}
 
-  /* CTA buttons group */
-  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:6px}
-  .btn{
-    display:inline-flex;align-items:center;gap:10px;
-    padding:16px 28px;border-radius:999px;
-    font-weight:700;text-decoration:none;color:#111;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-    transform:translateZ(0);
-    transition: transform .18s ease, box-shadow .18s ease;
-  }
-  .btn:active{transform:translateY(1px)}
-  .btn-main{
-    background: linear-gradient(90deg,var(--accentA),var(--accentB));
-    color:white;
-  }
-  .btn-ghost{
-    background: linear-gradient(90deg,#a78bfa, #ffd1dc);
-    color:#1b0b1d;
-    opacity:0.95;
-  }
-  .btn:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,0.35)}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 28px;border-radius:999px;
+  font-weight:700;text-decoration:none;color:#111;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transform:translateZ(0);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn-main{
+  background: linear-gradient(90deg,var(--accentA),var(--accentB));
+  color:white;
+}
+.btn-ghost{
+  background: linear-gradient(90deg,#a78bfa, #ffd1dc);
+  color:#1b0b1d;
+  opacity:0.95;
+}
+.btn:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,0.35)}
 
-/* ---------- SECTIONS ---------- */
+/* SECTIONS */
+.card{
+  margin-top:26px;
+  background:var(--card-bg);
+  padding:22px;border-radius:var(--radius);
+  box-shadow: 0 6px 22px rgba(3,6,23,0.5);
+  backdrop-filter: blur(4px);
+}
 
-  .card{
-    margin-top:26px;
-    background:var(--card-bg);
-    padding:22px;border-radius:var(--radius);
-    box-shadow: 0 6px 22px rgba(3,6,23,0.5);
-    backdrop-filter: blur(4px);
-  }
+h2.section-title{
+  font-size: clamp(20px,3.6vw,28px);
+  margin:4px 0 14px 0;
+  color:var(--text);
+}
 
-  h2.section-title{
-    font-size: clamp(20px,3.6vw,28px);
-    margin:4px 0 14px 0;
-    color:var(--text);
-  }
-
-  .text-muted{color:var(--muted);font-size:15px;line-height:1.5}
+.text-muted{color:var(--muted);font-size:15px;line-height:1.5}
 
 /* benefits grid */
-  .grid{
-    display:grid;grid-template-columns:repeat(2,1fr);gap:18px;
-  }
-  .benefit{
-    display:flex;gap:12px;align-items:flex-start;
-  }
-  .ico{
-    background:linear-gradient(180deg,#fff, rgba(255,255,255,0.06));
-    color:#1b0b1d;padding:10px;border-radius:12px;font-size:18px;width:46px;height:46px;display:flex;align-items:center;justify-content:center;
-  }
-  .benefit p{margin:0;color:var(--muted);font-weight:600}
+.grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:18px;
+}
+.benefit{
+  display:flex;gap:12px;align-items:flex-start;
+}
+.ico{
+  background:linear-gradient(180deg,#fff, rgba(255,255,255,0.06));
+  color:#1b0b1d;padding:10px;border-radius:12px;font-size:18px;width:46px;height:46px;display:flex;align-items:center;justify-content:center;
+}
+.benefit p{margin:0;color:var(--muted);font-weight:600}
 
 /* single column on mobile */
-  @media (max-width:720px){
-    .grid{grid-template-columns:1fr}
-    .wrap{padding:16px}
-  }
+@media (max-width:720px){
+  .grid{grid-template-columns:1fr}
+  .wrap{padding:16px}
+}
 
-/* ---------- TESTIMONIOS / COLLAGES ---------- */
-  .collage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
-  .collage{
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    padding:8px;border-radius:12px;min-height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;
-    transition:transform .26s ease, box-shadow .26s ease;
-  }
-  .collage img{width:100%;height:100%;object-fit:cover;border-radius:8px;display:block}
-  .collage:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.45)}
-  @media (max-width:900px){ .collage-grid{grid-template-columns:repeat(2,1fr)} }
-  @media (max-width:520px){ .collage-grid{grid-template-columns:1fr} }
+/* collage grid */
+.collage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.collage{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:8px;border-radius:12px;min-height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden;
+  transition:transform .26s ease, box-shadow .26s ease;
+}
+.collage img{width:100%;height:100%;object-fit:cover;border-radius:8px;display:block}
+.collage:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.45)}
+@media (max-width:900px){ .collage-grid{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:520px){ .collage-grid{grid-template-columns:1fr} }
 
-/* ---------- PRICING / BONUSES ---------- */
-  .pricing{
-    display:flex;gap:18px;align-items:stretch;flex-wrap:wrap;margin-top:14px;
-  }
-  .price-card{
-    flex:1 1 320px;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
-    box-shadow: 0 12px 40px rgba(0,0,0,0.45);
-  }
-  .price-big{font-size:28px;font-weight:800;margin:6px 0;color:var(--accentC)}
+/* pricing / bonuses */
+.pricing{
+  display:flex;gap:18px;align-items:stretch;flex-wrap:wrap;margin-top:14px;
+}
+.price-card{
+  flex:1 1 320px;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+}
+.price-big{font-size:28px;font-weight:800;margin:6px 0;color:var(--accentC)}
 
-/* ---------- FAQ (acordeón) ---------- */
-  .faq-item{border-top:1px solid rgba(255,255,255,0.03);padding:12px 0;cursor:pointer}
-  .faq-item .q{display:flex;justify-content:space-between;align-items:center;gap:10px}
-  .faq-item .q h4{margin:0;font-size:16px}
-  .faq-item .a{max-height:0;overflow:hidden;transition:max-height .32s ease;padding-top:0}
-  .faq-item.open .a{max-height:300px;padding-top:8px}
+/* FAQ */
+.faq-item{border-top:1px solid rgba(255,255,255,0.03);padding:12px 0;cursor:pointer}
+.faq-item .q{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.faq-item .q h4{margin:0;font-size:16px}
+.faq-item .a{max-height:0;overflow:hidden;transition:max-height .32s ease;padding-top:0}
+.faq-item.open .a{max-height:300px;padding-top:8px}
 
-/* ---------- FLOATING CTA ---------- */
-  .floating{
-    position:fixed;right:18px;bottom:18px;z-index:1200;
-  }
-  .floating a{
-    display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:999px;background:linear-gradient(90deg,var(--accentA),var(--accentB));
-    color:white;font-weight:800;text-decoration:none;box-shadow:0 16px 40px rgba(0,0,0,0.45);
-  }
+/* floating CTA */
+.floating{
+  position:fixed;right:18px;bottom:18px;z-index:1200;
+}
+.floating a{
+  display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:999px;background:linear-gradient(90deg,var(--accentA),var(--accentB));
+  color:white;font-weight:800;text-decoration:none;box-shadow:0 16px 40px rgba(0,0,0,0.45);
+}
 
-/* ---------- small helpers ---------- */
-  .muted{color:var(--muted)}
-  .center{text-align:center}
-  .pill{display:inline-block;background:linear-gradient(90deg,#fff0 20%, rgba(255,255,255,0.02));padding:8px 12px;border-radius:999px;font-weight:700;color:var(--text)}
+/* small helpers */
+.muted{color:var(--muted)}
+.center{text-align:center}
+.pill{display:inline-block;background:linear-gradient(90deg,#fff0 20%, rgba(255,255,255,0.02));padding:8px 12px;border-radius:999px;font-weight:700;color:var(--text)}
 </style>
 </head>
 <body>
 
 <div class="wrap">
 
-  <!-- HERO -->
-  <section class="hero card" aria-label="Hero">
-    <h1 class="title">Deja de Perder Tiempo en Negocios que No Funcionan</h1>
-    <p class="subtitle">Genera <strong>$2,500–$5,500 USD</strong> al mes con sistemas de alarmas. Aprende paso a paso cómo montar tu negocio de alarmas inalámbricas, incluso sin experiencia técnica, y empieza a generar ingresos extra trabajando solo los fines de semana.</p>
+<!-- HERO -->
+<section class="hero card" aria-label="Hero">
+  <h1 class="title">Deja de Perder Tiempo en Negocios que No Funcionan</h1>
+  <p class="subtitle">Genera <strong>$500–$1,100 USD</strong> al mes con sistemas de alarmas. Aprende paso a paso cómo montar tu negocio de alarmas inalámbricas, incluso sin experiencia técnica, y empieza a generar ingresos extra trabajando solo los fines de semana.</p>
+  <div class="hero-ctas">
+    <a class="btn btn-main" href="https://buy.stripe.com/3cI4gAfzg9Xz9WVdtAds400?utm_source=web&utm_medium=button&utm_campaign=lanzamiento_taller&utm_content=boton1"><i class="fa-solid fa-rocket"></i> 🚀 Quiero empezar ahora</a>
+    <a class="btn btn-ghost" href="#presentacion"><i class="fa-solid fa-circle-info"></i> Más detalles del curso</a>
+  </div>
+</section>
 
-    <div class="hero-ctas">
-      <a class="btn btn-main" href="#inscribirme"><i class="fa-solid fa-rocket"></i> 🚀 Quiero empezar ahora</a>
-      <a class="btn btn-ghost" href="#presentacion"><i class="fa-solid fa-circle-info"></i> Más detalles del curso</a>
-    </div>
-  </section>
+<!-- Benefits -->
+<section class="card">
+  <h2 class="section-title">Por qué funciona este negocio</h2>
+  <div class="grid">
+    <div class="benefit"><div class="ico">🔒</div><p>Resuelve un problema urgente: la seguridad es una necesidad básica que nunca desaparece.</p></div>
+    <div class="benefit"><div class="ico">⚙️</div><p>Tú controlas todo el proceso: no dependes de algoritmos, tendencias o suerte.</p></div>
+    <div class="benefit"><div class="ico">💰</div><p>Clientes listos para pagar: la gente necesita seguridad ahora y está dispuesta a invertir.</p></div>
+    <div class="benefit"><div class="ico">🚀</div><p>Escalable: empieza solo y crece hasta tener tu propio equipo.</p></div>
+    <div class="benefit"><div class="ico">⚡</div><p>Rápido y sencillo: con tecnología inalámbrica moderna, una instalación que antes tomaba 2 días ahora se hace en 3–4 horas.</p></div>
+    <div class="benefit"><div class="ico">📈</div><p>Dinámicas de desempeño mensuales para medir tu progreso y ganar confianza.</p></div>
+  </div>
+</section>
 
-  <!-- "Si ya intentaste..." -->
-  <section class="card">
-    <h2 class="section-title">Si ya intentaste…</h2>
-    <p class="text-muted">Si ya intentaste vender productos por internet, hacer multinivel o algún curso que prometía “ingresos pasivos”, sabes lo frustrante que es perder tiempo y dinero. Yo también pasé por eso: perdí mucho dinero y la confianza en que podía crear algo propio. Hasta que descubrí un negocio que realmente funciona para personas como tú y como yo.</p>
-  </section>
-
-  <!-- Benefits -->
-  <section class="card">
-    <h2 class="section-title">Por qué funciona este negocio</h2>
-    <div class="grid">
-      <div class="benefit"><div class="ico">🔒</div><p>Resuelve un problema urgente: la seguridad es una necesidad básica que nunca desaparece.</p></div>
-      <div class="benefit"><div class="ico">⚙️</div><p>Tú controlas todo el proceso: no dependes de algoritmos, tendencias o suerte.</p></div>
-      <div class="benefit"><div class="ico">💰</div><p>Clientes listos para pagar: la gente necesita seguridad ahora y está dispuesta a invertir.</p></div>
-      <div class="benefit"><div class="ico">🚀</div><p>Escalable: empieza solo y crece hasta tener tu propio equipo.</p></div>
-      <div class="benefit"><div class="ico">⚡</div><p>Rápido y sencillo: con tecnología inalámbrica moderna, una instalación que antes tomaba 2 días ahora se hace en 3–4 horas.</p></div>
-    </div>
-  </section>
-
-  <!-- COURSE / CTA -->
-  <section id="presentacion" class="card center">
-    <h2 class="section-title">Sistema completo: Curso “Negocio de Alarmas Desde Cero”</h2>
-
-    <div style="display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap;justify-content:center;">
-      <div style="flex:1 1 420px;min-width:280px;">
-        <ul>
-          <li>🎯 Más de 60 manuales de procedimientos completos</li>
-          <li>🎯 Videos explicativos para no técnicos</li>
-          <li>🎯 Sistema 100% inalámbrico</li>
-          <li>🎯 Mi modelo de negocio exacto</li>
-          <li>🎯 Soporte directo personalizado</li>
-          <li>🎯 Desde cero hasta profesional</li>
-        </ul>
-      </div>
-
-      <div style="flex:0 0 320px;">
-        <div class="price-card" style="padding:18px;border-radius:12px;">
-          <div class="muted">💎 El sistema completo que me genera</div>
-          <div class="price-big">$4,400–7,800 USD/mes</div>
-          <div class="muted">Preheader: Solo 12 espacios disponibles este mes + Bonos que valen $847</div>
-          <div style="height:12px"></div>
-          <a id="inscribirme" class="btn btn-main" href="#reserve" style="display:block;text-align:center">👉 Reservar mi lugar ahora</a>
-        </div>
+<!-- Curso / Oferta -->
+<section id="presentacion" class="card center">
+  <h2 class="section-title">Sistema completo: Curso “Negocio de Alarmas Desde Cero”</h2>
+  <div style="display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap;justify-content:center;">
+    <div style="flex:1 1 420px;min-width:280px;">
+      <ul>
+        <li>🎯 Más de 60 manuales de procedimientos completos</li>
+        <li>🎯 Videos explicativos para no técnicos</li>
+        <li>🎯 Sistema 100% inalámbrico</li>
+        <li>🎯 Mi modelo de negocio exacto</li>
+        <li>🎯 Soporte directo personalizado</li>
+        <li>🎯 Desde cero hasta profesional</li>
+        <li>🎯 Acceso inmediato a clases pregrabadas + sesiones en vivo por WhatsApp</li>
+      </ul>
+      <div style="margin-top:10px;background:rgba(255,209,102,0.1);padding:12px;border-radius:12px;font-weight:700;color:var(--accentC)">
+        ✅ GARANTÍA TOTAL DE 60 DÍAS: Si sigues el sistema completo y no consigues tu primera instalación, te devuelvo el 100% de tu dinero.
       </div>
     </div>
-  </section>
 
-  <!-- Testimonials / Collages -->
-  <section class="card">
-    <h2 class="section-title">Mi mejor testimonio</h2>
-    <div class="collage-grid">
-      <div class="collage"><img src="images/collage1.jpg" alt="Collage de Facturas 1" /></div>
-      <div class="collage"><img src="images/collage2.jpg" alt="Collage de Facturas 2" /></div>
-      <div class="collage"><img src="images/collage3.jpg" alt="Collage de Facturas 3" /></div>
-    </div>
-    <p class="muted center" style="margin-top:12px">Piensa en esto: observa estas comprobantes — ingresos recurrentes con monitoreos, mantenimientos y clientes fidelizados.</p>
-  </section>
-
-  <!-- Pricing / Bonuses -->
-  <section class="card">
-    <h2 class="section-title">Presentación oficial</h2>
-    <div class="pricing">
-      <div class="price-card">
-        <div style="font-weight:800">“SISTEMA PROFESIONAL DE ALARMAS: DE CERO A EXPERTO”</div>
-        <div class="muted">Valor: $2,199 USD</div>
-        <div style="height:8px"></div>
-        <p class="muted">Incluye 25+ videos explicativos, 60+ manuales, soporte y modelo de negocio completo.</p>
-      </div>
-      <div class="price-card">
-        <div style="font-weight:700;color:var(--accentC)">Bonos especiales (solo primeros 12 estudiantes)</div>
-        <ul style="margin-top:8px">
-          <li>🎁 Bono 1: Lista VIP de proveedores (valor $197)</li>
-          <li>🎁 Bono 2: Certificado de aptitudes (obsequio)</li>
-          <li>🎁 Bono 3: Masterclass “Instalaciones Comerciales” (valor $197)</li>
-          <li>🎁 Bono 4: Sesión de instalación conmigo (valor $197)</li>
-        </ul>
-        <div style="height:10px"></div>
-        <div style="font-weight:700">🔥 Valor total: <s style="color:rgba(255,255,255,0.3)">$2,790</s></div>
-        <div style="font-size:22px;font-weight:900;color:var(--accentC)">$977</div>
-        <div style="height:10px"></div>
-        <a class="btn btn-main" href="#reserve" style="display:block;text-align:center;margin-top:8px">🛒 Inscribirme ahora y obtener los bonos</a>
+    <div style="flex:0 0 320px;">
+      <div class="price-card" style="padding:18px;border-radius:12px;">
+        <div class="muted">💎 El sistema completo que me genera</div>
+        <div class="price-big">$500–1,100 USD/mes</div>
+        <div class="muted">Preheader: Solo 12 espacios disponibles este mes + Bonos que valen $497</div>
+        <div style="height:12px"></div>
+        <a id="inscribirme" class="btn btn-main" href="https://buy.stripe.com/3cI4gAfzg9Xz9WVdtAds400?utm_source=web&utm_medium=button&utm_campaign=lanzamiento_taller&utm_content=boton2" style="display:block;text-align:center">👉 Reservar mi lugar ahora</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- TRANSPARENCIA -->
-  <section class="card">
-    <h2 class="section-title">Transparencia total</h2>
-    <p class="text-muted">No te voy a mentir. Este sistema requiere trabajo: terminar de ver los videos (2–3 por semana), consultar las guías, practicar las instalaciones, contactar personas para conseguir clientes y salir de tu zona de confort. Si buscas dinero fácil sin esfuerzo, este no es para ti. Pero si buscas un negocio real, con ganancias reales, paso a paso, esto es exactamente lo que necesitas.</p>
+<!-- Bonos -->
+<section class="card">
+  <h2 class="section-title">Bonos exclusivos (solo primeros 12 estudiantes)</h2>
+  <ul style="margin-top:8px">
+    <li>🎁 Masterclass sobre venta e instalación de cámaras IP y HD-TVI para principiantes</li>
+    <li>🎁 Masterclass sobre venta e instalación de controles de acceso para negocios</li>
+    <li>🎁 Certificado de aptitudes (obsequio)</li>
+  </ul>
+  <div style="height:10px"></div>
+  <a class="btn btn-main" href="https://buy.stripe.com/3cI4gAfzg9Xz9WVdtAds400?utm_source=web&utm_medium=button&utm_campaign=lanzamiento_taller&utm_content=boton3" style="display:block;text-align:center;margin-top:8px">🛒 Inscribirme ahora y obtener los bonos</a>
+</section>
 
-    <div style="margin-top:12px" class="center">
-      <a class="btn btn-ghost" href="#reserve">⚡ Sí, quiero construir mi negocio de alarmas</a>
+<!-- Testimonios / Collage -->
+<section class="card">
+  <h2 class="section-title">Mi mejor testimonio</h2>
+  <div class="collage-grid">
+    <div class="collage"><img src="images/collage1.jpg" alt="Collage de Facturas 1" /></div>
+    <div class="collage"><img src="images/collage2.jpg" alt="Collage de Facturas 2" /></div>
+    <div class="collage"><img src="images/collage3.jpg" alt="Collage de Facturas 3" /></div>
+  </div>
+  <p class="muted center" style="margin-top:12px">Piensa en esto: observa estas comprobantes — ingresos recurrentes con monitoreos, mantenimientos y clientes fidelizados.</p>
+</section>
+
+<!-- Reserva final / CTA -->
+<section id="reserve" class="card center">
+  <h2 class="section-title">✅ Solo 12 estudiantes — Reserva tu lugar</h2>
+  <p class="muted">Importante: solo aceptaré 12 estudiantes durante este lanzamiento para poder dar soporte personal de calidad.</p>
+
+  <div style="max-width:520px;margin:18px auto">
+    <a class="btn btn-main" href="https://buy.stripe.com/3cI4gAfzg9Xz9WVdtAds400?utm_source=web&utm_medium=button&utm_campaign=lanzamiento_taller&utm_content=boton4" target="_blank" rel="noopener noreferrer">✅ Quiero uno de los 12 lugares</a>
+    <div style="height:10px"></div>
+    <a class="btn btn-ghost" href="mailto:info@tucorreo.com?subject=Más%20info%20curso" style="display:inline-block;margin-top:8px">💬 Quiero más información</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="card">
+  <h2 class="section-title">Preguntas frecuentes</h2>
+
+  <div id="faq">
+    <div class="faq-item">
+      <div class="q"><h4>¿Necesito experiencia técnica?</h4><div class="muted"><i class="fa-solid fa-chevron-down"></i></div></div>
+      <div class="a"><p class="muted">No, el curso está diseñado para principiantes.</p></div>
     </div>
-  </section>
 
-  <!-- RESERVE / CTA final -->
-  <section id="reserve" class="card center">
-    <h2 class="section-title">✅ Solo 12 estudiantes — Reserva tu lugar</h2>
-    <p class="muted">Importante: solo aceptaré 12 estudiantes durante este lanzamiento para poder dar soporte personal de calidad.</p>
-
-    <div style="max-width:520px;margin:18px auto">
-      <a class="btn btn-main" href="https://tusistema-pago.com/checkout" target="_blank" rel="noopener noreferrer">✅ Quiero uno de los 12 lugares</a>
-      <div style="height:10px"></div>
-      <a class="btn btn-ghost" href="mailto:info@tucorreo.com?subject=Más%20info%20curso" style="display:inline-block;margin-top:8px">💬 Quiero más información</a>
+    <div class="faq-item">
+      <div class="q"><h4>¿Cuánto puedo ganar?</h4><div class="muted"><i class="fa-solid fa-chevron-down"></i></div></div>
+      <div class="a"><p class="muted">Entre $500 y $1,100 USD extra al mes trabajando solo fines de semana. Con compromiso, puedes escalar hasta $4,000–$6,000 USD mensuales.</p></div>
     </div>
-  </section>
 
-  <!-- FAQ ACCORDION -->
-  <section class="card">
-    <h2 class="section-title">Preguntas frecuentes</h2>
-
-    <div id="faq">
-      <div class="faq-item">
-        <div class="q"><h4>¿Necesito experiencia técnica?</h4><div class="muted"><i class="fa-solid fa-chevron-down"></i></div></div>
-        <div class="a"><p class="muted">No, el curso está diseñado para principiantes.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="q"><h4>¿Cuánto puedo ganar?</h4><div class="muted"><i class="fa-solid fa-chevron-down"></i></div></div>
-        <div class="a"><p class="muted">Entre $800 y $1,500 USD extra al mes trabajando solo fines de semana. Con compromiso, puedes escalar hasta $4,000–$6,000 USD mensuales.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="q"><h4>¿Necesito invertir mucho?</h4><div class="muted"><i class="fa-solid fa-chevron-down"></i></div></div>
-        <div class="a"><p class="muted">Menos de $200 USD en herramientas y equipos iniciales.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="q"><h4>¿Cómo accedo al curso?</h4><div class="muted"><i class="fa-solid fa-chevron-down"></i></div></div>
-        <div class="a"><p class="muted">Acceso inmediato a todos los módulos online.</p></div>
-      </div>
+    <div class="faq-item">
+      <div class="q"><h4>¿Necesito invertir mucho?</h4><div class="muted"><i class="fa-solid fa-chevron-down"></i></div></div>
+      <div class="a"><p class="muted">Menos de $200 USD en herramientas y equipos iniciales.</p></div>
     </div>
-  </section>
 
-  <!-- final CTA small -->
-  <section class="center" style="padding:8px 0 40px 0">
-    <div class="pill">🎯 Sí, quiero acceso inmediato y empezar a generar ingresos</div>
-  </section>
+    <div class="faq-item">
+      <div class="q"><h4>¿Cómo accedo al curso?</h4><div class="muted"><i class="fa-solid fa-chevron-down"></i></div></div>
+      <div class="a"><p class="muted">Acceso inmediato a todos los módulos online. También habrá sesiones en vivo, notificadas por el grupo de WhatsApp de miembros.</p></div>
+    </div>
 
-  <footer class="center muted" style="padding-bottom:40px">© 2025 Tu Nombre — Todos los derechos reservados.</footer>
+    <div class="faq-item">
+      <div class="q"><h4>¿Cuándo comienza el curso?</h4><div class="muted"><i class="fa-solid fa-chevron-down"></i></div></div>
+      <div class="a"><p class="muted">Inmediatamente después de tu inscripción obtendrás acceso a las clases pregrabadas. Las sesiones en vivo se anunciarán semanal o quincenalmente según la dinámica del curso.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA final pequeño -->
+<section class="center" style="padding:8px 0 40px 0">
+  <div class="pill">🎯 Sí, quiero acceso inmediato y empezar a generar ingresos</div>
+</section>
+
+<footer class="center muted" style="padding-bottom:40px">© 2025 Tu Nombre — Todos los derechos reservados.</footer>
 </div>
 
 <!-- floating CTA -->
 <div class="floating">
-  <a href="#reserve"><i class="fa-solid fa-bolt"></i> Reservar mi lugar</a>
+  <a href="https://buy.stripe.com/3cI4gAfzg9Xz9WVdtAds400?utm_source=web&utm_medium=button&utm_campaign=lanzamiento_taller&utm_content=boton5"><i class="fa-solid fa-bolt"></i> Reservar mi lugar</a>
 </div>
 
-<!-- Simple JS: FAQ toggle + small smooth reveal for images -->
+<!-- JS FAQ y Collage -->
 <script>
-  // FAQ accordion
-  document.querySelectorAll('.faq-item').forEach(item=>{
-    item.addEventListener('click', ()=>{
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
-      if(!isOpen) item.classList.add('open');
-    });
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.addEventListener('click', ()=>{
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!isOpen) item.classList.add('open');
   });
+});
 
-  // Lazy style reveal for collages (nice little effect)
-  const collages = document.querySelectorAll('.collage');
-  const io = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        e.target.style.transform = 'translateY(0)';
-        e.target.style.opacity = '1';
-        e.target.style.transition = 'transform .6s ease, opacity .6s ease';
-      }
-    });
-  }, {threshold:0.15});
-  collages.forEach(c=>{ c.style.transform='translateY(18px)'; c.style.opacity='0'; io.observe(c); });
-
+const collages = document.querySelectorAll('.collage');
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.transform = 'translateY(0)';
+      e.target.style.opacity = '1';
+      e.target.style.transition = 'transform .6s ease, opacity .6s ease';
+    }
+  });
+}, {threshold:0.15});
+collages.forEach(c=>{ c.style.transform='translateY(18px)'; c.style.opacity='0'; io.observe(c); });
 </script>
 </body>
 </html>
-
-
-
