@@ -27,4 +27,26 @@
       const x = setInterval(() => {
         let now = new Date().getTime();
         let d = end - now;
-        let h = Mat
+        let h = Math.floor((d%(1000*60*60*24))/(1000*60*60));
+        let m = Math.floor((d%(1000*60*60))/(1000*60));
+        let s = Math.floor((d%(1000*60))/1000);
+        document.getElementById("contador").innerHTML = h+"h "+m+"m "+s+"s";
+        if (d<0){clearInterval(x);document.getElementById("contador").innerHTML="¡Ya casi llega tu siguiente video!";}
+      },1000);
+    }
+    window.onload=()=>startCountdown(24);
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Por Qué Todos los Negocios ‘Fáciles’ Fallan</h1>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID1" allowfullscreen></iframe>
+    </div>
+    <p>Si ya intentaste negocios que prometían “ingresos rápidos” y terminaste frustrado, este video es para ti. Te mostraré por qué fallan y el único negocio que realmente funciona para personas como tú, sin invertir grandes sumas ni depender de suerte o algoritmos.</p>
+    <div class="contador">El siguiente video llegará en: <span id="contador"></span></div>
+    <p>En el siguiente video descubrirás el <strong>‘secreto inalámbrico’</strong> que me permite instalar sistemas de seguridad en tiempo récord.</p>
+    <div class="note">👉 No olvides revisar tu bandeja de spam mañana 😉</div>
+  </div>
+</body>
+</html>
