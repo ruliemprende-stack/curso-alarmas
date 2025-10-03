@@ -1,101 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Taller Gratuito- Video 1 | Curso de Alarmas</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #2b0a3d, #6a0dad);
-      color: #fff;
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    h1, h2 {
-      text-align: center;
-      margin-bottom: 15px;
-    }
-    h1 {
-      font-size: 2.2em;
-      color: gold;
-    }
-    h2 {
-      font-size: 1.5em;
-      color: #fff;
-    }
-    p {
-      margin-bottom: 20px;
-    }
-    .card {
-      background: rgba(255,255,255,0.1);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    }
-    .btn {
-      display: inline-block;
-      background: gold;
-      color: #2b0a3d;
-      padding: 12px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background: #ffdb4d;
-    }
-    .footer {
-      text-align: center;
-      font-size: 0.9em;
-      margin-top: 30px;
-      opacity: 0.7;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Secreto Inalámbrico: Cómo Instalar Sistemas de Seguridad</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+:root{
+  --bg1:#1a1520;
+  --accentA:#FFD700;
+  --accentB:#FFB800;
+  --accentC:#f15bb5;
+  --text:#f3f4f6;
+  --muted:#d1d5db;
+  --radius:14px;
+}
+body{
+  margin:0;
+  font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background:linear-gradient(160deg,#0f1724 0%,#151827 20%,#20122a 60%,#40184a 100%);
+  color:var(--text);
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:18px;}
+@keyframes fadeSlideUp{0%{opacity:0; transform:translateY(30px) scale(0.96);}100%{opacity:1; transform:translateY(0) scale(1);}}
+.fadeSlideUp{opacity:0; animation:fadeSlideUp 1s ease forwards;}
+@keyframes pulseBtn{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
+.hero{display:flex; flex-direction:column; align-items:center; text-align:center; padding:24px 18px; border-radius:18px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); box-shadow:0 10px 40px rgba(2,6,23,0.6);}
+.title{font-size:clamp(22px,5vw,38px); font-weight:800; line-height:1.05; background:linear-gradient(270deg,#ffffff 0%,#FFD700 35%,#f15bb5 65%,#9b5de5 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; animation:gradientMove 8s ease infinite;}
+@keyframes gradientMove{0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%}}
+.subtitle{color:var(--muted); font-size:clamp(14px,2.4vw,18px); max-width:820px; margin-top:12px;}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;transition:.18s; cursor:pointer;}
+.btn-main{background:linear-gradient(90deg,var(--accentA),var(--accentB)); color:white; box-shadow:0 6px 18px rgba(0,0,0,0.35); animation:pulseBtn 2s infinite;}
+.btn:hover{transform:translateY(-2px) scale(1.05);}
+.countdown{display:flex;justify-content:center;gap:12px;font-size:22px;font-weight:700;margin:12px 0;flex-wrap:wrap;}
+.countdown div{background:linear-gradient(90deg,var(--accentA),var(--accentB)); padding:10px 14px;border-radius:12px;color:white; min-width:50px;text-align:center;}
+</style>
 </head>
 <body>
-  <div class="container">
-    <!-- Hero -->
-    <div class="card">
-      <h1>🚀 Taller Gratuito - Video 1</h1>
-      <h2>Tus instalaciones en ingresos</h2>
-      <p>Descubre cómo transformar tus habilidades en instalaciones en una verdadera fuente de ingresos. En este primer video del taller gratuito, aprenderás las bases de cómo cualquier persona puede iniciar en el mundo de la instalación de alarmas, sin necesidad de experiencia previa.</p>
-    </div>
 
-    <!-- Bloque de video -->
-    <div class="card" style="text-align:center">
-      <h2>🎥 Aquí va tu Video 1</h2>
-      <p>(Inserta aquí tu iframe de YouTube/Vimeo más adelante)</p>
-      <div style="margin:20px 0;">
-        <img src="https://via.placeholder.com/800x450?text=Video+1+Placeholder" alt="Video 1" style="max-width:100%; border-radius:12px;">
-      </div>
-    </div>
+<div class="wrap fadeSlideUp">
 
-    <!-- CTA siguiente video -->
-    <div class="card" style="text-align:center">
-      <h2>👉 Continúa con el siguiente paso</h2>
-      <p>Haz clic en el botón para avanzar al segundo video de este taller gratuito:</p>
-      <a href="video2.html" class="btn">Ir al Video 2</a>
+  <!-- HERO -->
+  <section class="hero">
+    <h1 class="title">El Secreto Inalámbrico: Cómo Instalar Sistemas de Seguridad</h1>
+    <p class="subtitle">“En este video te voy a mostrar la tecnología que transformó por completo este negocio. Instalar alarmas ya no requiere cables ni conocimientos técnicos complicados. Descubre cómo cualquier persona puede hacerlo y comenzar a generar ingresos extra en pocas semanas.”</p>
+    
+    <!-- Video Embed -->
+    <div style="margin:20px 0; width:100%; max-width:640px;">
+      <iframe width="100%" height="360" src="https://www.youtube.com/embed/TU_VIDEO_ID_2" title="Video 2" frameborder="0" allowfullscreen></iframe>
     </div>
+    
+    <p class="subtitle">Ahora que conoces cómo funciona la tecnología inalámbrica y cómo puedes dominarla rápido, en el último video te contaré cómo convertir este conocimiento en ingresos de $800 a $1,500 USD mensuales, incluso si empiezas desde cero.  
+    ¡Prepárate para descubrir el paso final! Espera el link en tu correo <strong>EL DÍA DE MAÑANA</strong>. Listo! no olvides buscar en tu bandeja de spam. Esta puede ser LA oportunidad.</p>
+    
+    <!-- Countdown opcional -->
+    <div class="countdown" id="countdown">
+      <div><span id="hours">00</span>H</div>
+      <div><span id="minutes">00</span>M</div>
+      <div><span id="seconds">00</span>S</div>
+    </div>
+    
+    <a class="btn btn-main" href="https://elsecretodelasalarmas.carrd.co/" target="_blank"><i class="fa-solid fa-arrow-right"></i> Próximo video</a>
+  </section>
 
-    <!-- CTA página de ventas -->
-    <div class="card" style="text-align:center">
-      <h2>💡 ¿Quieres acelerar tu progreso?</h2>
-      <p>Si ya viste el valor de este primer video, imagina lo que lograrás con el sistema completo.  
-      Aprovecha la oferta especial y asegura tu lugar en el curso de alarmas.</p>
-      <a href="index.html?utm_source=video1&utm_medium=cta&utm_campaign=taller" class="btn">Ir a la Página de Ventas</a>
-    </div>
+</div>
 
-    <div class="footer">
-      © 2025 Curso de Alarmas. Todos los derechos reservados.
-    </div>
-  </div>
+<script>
+// Countdown (24 horas para el siguiente video)
+const countdownDate = new Date(Date.now() + 24*60*60*1000).getTime();
+function updateCountdown(){
+  const now = new Date().getTime();
+  const distance = countdownDate - now;
+  if(distance<0) return;
+  document.getElementById('hours').innerText=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+  document.getElementById('minutes').innerText=Math.floor((distance%(1000*60*60))/(1000*60));
+  document.getElementById('seconds').innerText=Math.floor((distance%(1000*60))/1000);
+}
+setInterval(updateCountdown,1000);
+updateCountdown();
+</script>
+
 </body>
 </html>
