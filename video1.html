@@ -5,39 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Video 1 - Por qué fallan los negocios fáciles</title>
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; text-align:center; background:#f8f8fc; color:#333; }
-    .container { max-width:700px; margin:auto; padding:20px; }
-    h1 { color:#5e2b97; }
-    .contador { font-size:20px; font-weight:bold; color:#d4af37; margin:20px 0; }
-    .video { margin:20px 0; }
-    .note { margin-top:20px; font-size:14px; color:#666; }
+    body {
+      margin: 0; font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #5e2b97, #d4af37);
+      color: #fff; text-align: center;
+    }
+    .container { max-width: 800px; margin: auto; padding: 40px 20px; }
+    h1 { font-size: 2em; margin-bottom: 20px; animation: fadeIn 1s ease; }
+    p { font-size: 1.2em; line-height: 1.5; margin-bottom: 20px; animation: slideUp 1.2s ease; }
+    .video { margin: 30px 0; animation: fadeIn 1.5s ease; }
+    iframe { width: 100%; max-width: 700px; height: 390px; border: none; border-radius: 15px; }
+    .contador { font-size: 1.5em; font-weight: bold; background: rgba(0,0,0,0.4);
+      padding: 15px; border-radius: 10px; display: inline-block; margin: 20px 0; }
+    .note { font-size: 0.9em; color: #f0f0f0; margin-top: 15px; }
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+    @keyframes slideUp { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
   </style>
   <script>
     function startCountdown(hours) {
-      const countDownDate = new Date().getTime() + hours*60*60*1000;
-      const x = setInterval(function() {
+      const end = new Date().getTime() + hours*60*60*1000;
+      const x = setInterval(() => {
         let now = new Date().getTime();
-        let distance = countDownDate - now;
-        let h = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-        let m = Math.floor((distance % (1000*60*60)) / (1000*60));
-        let s = Math.floor((distance % (1000*60)) / 1000);
-        document.getElementById("contador").innerHTML = h + "h " + m + "m " + s + "s";
-        if (distance < 0) { clearInterval(x); document.getElementById("contador").innerHTML="¡Ya casi llega tu siguiente video!"; }
-      },1000);
-    }
-    window.onload=function(){startCountdown(24);}
-  </script>
-</head>
-<body>
-  <div class="container">
-    <h1>Por Qué Todos los Negocios ‘Fáciles’ Fallan</h1>
-    <div class="video">
-      <p><em>(Aquí insertas tu video 1 embebido de YouTube o Vimeo)</em></p>
-    </div>
-    <p>“Si ya intentaste negocios que prometían ‘ingresos rápidos’ y terminaste frustrado, este video es para ti. Te mostraré por qué fallan y el único negocio que realmente funciona para personas como tú, sin invertir grandes sumas ni depender de suerte o algoritmos.”</p>
-    <div class="contador">El siguiente video llegará en: <span id="contador"></span></div>
-    <p>Ahora que sabes por qué tantos negocios fallan, en el siguiente video te mostraré el ‘secreto inalámbrico’ que me permite instalar sistemas de seguridad en tiempo récord.</p>
-    <div class="note">No olvides revisar tu bandeja de spam mañana 😉</div>
-  </div>
-</body>
-</html>
+        let d = end - now;
+        let h = Mat
