@@ -1,47 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Tus instalaciones en ingresos - Taller Gratuito</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-<style>
-/* === ESTILOS UNIFICADOS === */
-:root{
-  --bg1:#1a1520; --accentA:#9b5de5; --accentB:#f15bb5; --accentC:#ffd166;
-  --card-bg:rgba(255,255,255,0.04); --text:#f3f4f6; --muted:#d1d5db; --radius:14px;
-}
-body{margin:0;font-family:'Inter',sans-serif;background:linear-gradient(160deg,#0f1724 0%,#151827 20%,#20122a 60%,#40184a 100%);color:var(--text);}
-.wrap{max-width:880px;margin:0 auto;padding:28px;}
-.card{background:var(--card-bg);padding:28px;border-radius:var(--radius);margin-top:20px;box-shadow:0 8px 32px rgba(0,0,0,0.5);}
-h1,h2{margin:0;font-weight:800;}
-h1{font-size:clamp(28px,6vw,42px);background:linear-gradient(270deg,#fff,#ffd166,#f15bb5,#9b5de5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-h2{font-size:22px;margin-bottom:12px;}
-p{line-height:1.6;color:var(--muted);}
-.btn{display:inline-block;padding:14px 24px;margin-top:16px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:linear-gradient(90deg,var(--accentA),var(--accentB));}
-.center{text-align:center;}
-.footer{margin-top:40px;text-align:center;color:var(--muted);font-size:13px;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video 1 - Por qué fallan los negocios fáciles</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; text-align:center; background:#f8f8fc; color:#333; }
+    .container { max-width:700px; margin:auto; padding:20px; }
+    h1 { color:#5e2b97; }
+    .contador { font-size:20px; font-weight:bold; color:#d4af37; margin:20px 0; }
+    .video { margin:20px 0; }
+    .note { margin-top:20px; font-size:14px; color:#666; }
+  </style>
+  <script>
+    function startCountdown(hours) {
+      const countDownDate = new Date().getTime() + hours*60*60*1000;
+      const x = setInterval(function() {
+        let now = new Date().getTime();
+        let distance = countDownDate - now;
+        let h = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+        let m = Math.floor((distance % (1000*60*60)) / (1000*60));
+        let s = Math.floor((distance % (1000*60)) / 1000);
+        document.getElementById("contador").innerHTML = h + "h " + m + "m " + s + "s";
+        if (distance < 0) { clearInterval(x); document.getElementById("contador").innerHTML="¡Ya casi llega tu siguiente video!"; }
+      },1000);
+    }
+    window.onload=function(){startCountdown(24);}
+  </script>
 </head>
 <body>
-<div class="wrap">
-
-<section class="card center">
-  <h1>Convierte tus instalaciones en ingresos</h1>
-  <p>Descubre cómo transformar cada instalación en una fuente de ingresos estables y escalables, sin necesidad de experiencia previa en seguridad.</p>
-</section>
-
-<section class="card center">
-  <h2>🎥 Video 1 del Taller Gratuito</h2>
-  <div style="background:#000;height:300px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;">Aquí va tu video</div>
-  <p>Aprenderás por qué la seguridad es un mercado en crecimiento y cómo tú puedes entrar en él ahora mismo.</p>
-  <a class="btn" href="video2.html">➡️ Ver el Video 2</a>
-</section>
-
-<div class="footer">
-  <p>Contacto: cursodealarmas88@gmail.com | © 2025 Curso de Alarmas</p>
-</div>
-
-</div>
+  <div class="container">
+    <h1>Por Qué Todos los Negocios ‘Fáciles’ Fallan</h1>
+    <div class="video">
+      <p><em>(Aquí insertas tu video 1 embebido de YouTube o Vimeo)</em></p>
+    </div>
+    <p>“Si ya intentaste negocios que prometían ‘ingresos rápidos’ y terminaste frustrado, este video es para ti. Te mostraré por qué fallan y el único negocio que realmente funciona para personas como tú, sin invertir grandes sumas ni depender de suerte o algoritmos.”</p>
+    <div class="contador">El siguiente video llegará en: <span id="contador"></span></div>
+    <p>Ahora que sabes por qué tantos negocios fallan, en el siguiente video te mostraré el ‘secreto inalámbrico’ que me permite instalar sistemas de seguridad en tiempo récord.</p>
+    <div class="note">No olvides revisar tu bandeja de spam mañana 😉</div>
+  </div>
 </body>
 </html>
