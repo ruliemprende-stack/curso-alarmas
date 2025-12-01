@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -12,8 +12,8 @@
 <style>
 :root{
   --bg1:#1a1520;
-  --accentA:#FFD700; /* Dorado brillante */
-  --accentB:#FFB800; /* Dorado degradado */
+  --accentA:#FFD700;
+  --accentB:#FFB800;
   --accentC:#f15bb5;
   --text:#f3f4f6;
   --muted:#d1d5db;
@@ -29,7 +29,6 @@ body{
 }
 .wrap{max-width:1000px;margin:0 auto;padding:18px;}
 
-/* Animaciones */
 @keyframes fadeSlideUp{
   0%{opacity:0; transform:translateY(30px) scale(0.96);}
   100%{opacity:1; transform:translateY(0) scale(1);}
@@ -73,14 +72,26 @@ body{
 .carousel-item{flex:0 0 280px; scroll-snap-align:start; background:rgba(255,255,255,0.04); border-radius:var(--radius); padding:18px; box-shadow:0 10px 32px rgba(0,0,0,0.35); transition:transform .3s;}
 .carousel-item:hover{transform:scale(1.04);}
 
-/* Countdown */
-.countdown{display:flex;justify-content:center;gap:16px;font-size:24px;font-weight:700;margin:12px 0;flex-wrap:wrap;}
-.countdown div{background:linear-gradient(90deg,var(--accentA),var(--accentB)); padding:12px 16px;border-radius:12px;color:white; min-width:60px;text-align:center;}
-
-/* Cards / Pricing */
-.price-card{background:rgba(255,255,255,0.04); padding:18px; border-radius:var(--radius); box-shadow:0 12px 40px rgba(0,0,0,0.45); margin-top:18px;}
-.price-big{font-size:28px;font-weight:800;margin:6px 0;color:var(--accentC);}
-.muted{color:var(--muted);}
+/* Pricing */
+.price-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+  margin-top:18px;
+}
+@media(min-width:750px){
+  .price-grid{grid-template-columns:1fr 1fr;}
+}
+.price-card{
+  background:rgba(255,255,255,0.04);
+  padding:20px;
+  border-radius:var(--radius);
+  box-shadow:0 12px 40px rgba(0,0,0,0.45);
+}
+.price-card h3{margin:0;font-size:24px;font-weight:800;}
+.price-price{font-size:30px;font-weight:800;color:var(--accentC); margin:12px 0;}
+.price-card ul{padding-left:18px;}
+.price-card li{margin-bottom:6px;}
 
 /* Floating CTA */
 .floating{position:fixed;right:18px;bottom:18px;z-index:1200;}
@@ -96,7 +107,7 @@ body{
   <h1 class="title">Genera $2,500–$5,100 USD/mes instalando alarmas</h1>
   <p class="subtitle">Aprende paso a paso cómo montar tu negocio de alarmas inalámbricas y empieza a generar ingresos extra sin experiencia previa.</p>
   <div class="hero-ctas">
-    <a class="btn btn-main" href="https://buy.stripe.com/00w00kbj0d9L7ONahods401?utm_source=web&utm_medium=button&utm_campaign=lanzamiento_taller&utm_content=boton1" target="_blank"><i class="fa-solid fa-rocket"></i> Quiero empezar</a>
+    <a class="btn btn-main" href="#precios"><i class="fa-solid fa-rocket"></i> Ver paquetes</a>
     <a class="btn btn-ghost" href="#benefits"><i class="fa-solid fa-circle-info"></i> Ver beneficios</a>
   </div>
 </section>
@@ -112,99 +123,108 @@ body{
   </div>
 </section>
 
-<!-- Beneficios Carousel -->
+<!-- Beneficios -->
 <section id="benefits" class="fadeSlideUp">
   <h2 class="section-title center">Por qué funciona este negocio</h2>
   <div class="carousel">
-    <div class="carousel-item">🔒 Seguridad: resuelve un problema urgente y constante.</div>
-    <div class="carousel-item">⚙️ Control total: tú manejas todo el proceso.</div>
-    <div class="carousel-item">💰 Clientes listos para pagar y mantener servicios.</div>
-    <div class="carousel-item">🚀 Escalable desde solo hasta equipo completo.</div>
-    <div class="carousel-item">⚡ Instalaciones rápidas gracias a tecnología inalámbrica moderna.</div>
+    <div class="carousel-item">🔒 Seguridad: problema urgente y constante.</div>
+    <div class="carousel-item">⚙️ Control total: tú decides tu ritmo.</div>
+    <div class="carousel-item">💰 Clientes listos para pagar y renovar servicios.</div>
+    <div class="carousel-item">🚀 Comienzas solo y escalas a equipo.</div>
+    <div class="carousel-item">⚡ Instalación rápida gracias a equipo inalámbrico moderno.</div>
   </div>
 </section>
 
-<!-- Testimonios / Collage -->
+<!-- Evidencias -->
 <section class="fadeSlideUp">
   <h2 class="section-title center">Testimonios y comprobantes</h2>
+  
+  <!-- FACTURAS -->
   <div class="carousel">
-    <div class="carousel-item"><img src="images/collage1.jpg" loading="lazy" style="width:100%;border-radius:12px;"></div>
-    <div class="carousel-item"><img src="images/collage2.jpg" loading="lazy" style="width:100%;border-radius:12px;"></div>
-    <div class="carousel-item"><img src="images/collage3.jpg" loading="lazy" style="width:100%;border-radius:12px;"></div>
+    <div class="carousel-item"><img src="images/collage1.jpg" style="width:100%;border-radius:12px;"></div>
+    <div class="carousel-item"><img src="images/collage2.jpg" style="width:100%;border-radius:12px;"></div>
+    <div class="carousel-item"><img src="images/collage3.jpg" style="width:100%;border-radius:12px;"></div>
+  </div>
+
+  <!-- NUEVA SECCIÓN DE MONITOREO -->
+  <h3 style="margin-top:24px;">Ingresos mensuales recurrentes</h3>
+  <p class="muted">Además de tus instalaciones, este negocio te permite generar <strong>ingresos mensuales por monitoreo</strong>.  
+  Esto significa que cada cliente puede convertirse en un ingreso fijo mes a mes.  
+  Aquí algunos ejemplos reales:</p>
+
+  <div class="carousel">
+    <div class="carousel-item"><img src="images/monitoreo1.jpg" style="width:100%;border-radius:12px;"></div>
+    <div class="carousel-item"><img src="images/monitoreo2.jpg" style="width:100%;border-radius:12px;"></div>
+    <div class="carousel-item"><img src="images/monitoreo3.jpg" style="width:100%;border-radius:12px;"></div>
   </div>
 </section>
 
-<!-- Curso completo -->
+<!-- Contenido del curso -->
 <section class="fadeSlideUp">
   <h2 class="section-title center">Contenido del curso</h2>
   <div class="carousel">
-    <div class="carousel-item">
-      ✅ <strong>Más de 60 manuales de procedimiento completos</strong><br>
-      Instalaciones paso a paso, casos especiales, solución de problemas avanzados.
-    </div>
-    <div class="carousel-item">
-      ✅ <strong>25+ Videos explicativos para no técnicos</strong><br>
-      Grabaciones simples y visuales, demostraciones prácticas.
-    </div>
-    <div class="carousel-item">
-      ✅ <strong>Sistema 100% inalámbrico profesional</strong><br>
-      Paneles reconocidos, app intuitiva, instalaciones rápidas.
-    </div>
-    <div class="carousel-item">
-      ✅ <strong>Dinámicas de desempeño por mes</strong><br>
-      Sesiones Q&A: primera semana mensual, luego cada 15 días.
-    </div>
+    <div class="carousel-item">📘 60+ manuales completos de instalación y solución de problemas.</div>
+    <div class="carousel-item">🎥 25+ videos explicativos para no técnicos.</div>
+    <div class="carousel-item">📡 Sistema 100% inalámbrico profesional.</div>
+    <div class="carousel-item">🧠 Dinámicas mensuales de desempeño + Q&A.</div>
   </div>
 </section>
 
-<!-- Pricing / Bonos -->
+<!-- Vista interna del curso -->
 <section class="fadeSlideUp">
-  <h2 class="section-title center">Precio y Bonos Especiales</h2>
-  <div class="price-card">
-    <div style="font-weight:800">Curso completo: “Negocio de Alarmas – De Cero a Experto”</div>
-    <div class="muted">Valor real: $1,199 USD</div>
-    <p class="muted">Oferta lanzamiento: <strong>$497 USD</strong> (solo 12 lugares)</p>
-    <ul class="muted">
-      <li>🎁 Masterclass “Venta e instalación de cámaras IP/HDTVI”</li>
-      <li>🎁 Masterclass “Controles de acceso para negocios”</li>
-      <li>🎁 Certificado de aptitudes</li>
-    </ul>
-    <p class="muted">✅ Garantía total 60 días: Si completas el sistema y no logras tu primera instalación, devolución 100%.</p>
-    <a class="btn btn-main" href="https://buy.stripe.com/00w00kbj0d9L7ONahods401?utm_source=web&utm_medium=button&utm_campaign=lanzamiento_taller&utm_content=boton2">🛒 Inscribirme ahora</a>
+  <h2 class="section-title center">Así se ve por dentro el curso</h2>
+  <p class="muted center">Antes de entrar podrás ver exactamente cómo está organizado el sistema, módulos, lecciones y herramientas.</p>
+  <div class="carousel">
+    <div class="carousel-item"><img src="images/inside1.jpg" style="width:100%;border-radius:12px;"></div>
+    <div class="carousel-item"><img src="images/inside2.jpg" style="width:100%;border-radius:12px;"></div>
+    <div class="carousel-item"><img src="images/inside3.jpg" style="width:100%;border-radius:12px;"></div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="fadeSlideUp">
-  <h2 class="section-title center">Preguntas frecuentes</h2>
-  <div class="faq-item">
-    <h4>¿Necesito experiencia técnica?</h4>
-    <p class="muted">No, el curso es para principiantes.</p>
-  </div>
-  <div class="faq-item">
-    <h4>¿Cuánto puedo ganar?</h4>
-    <p class="muted">$800–$1,500 USD extra al mes solo fines de semana. Escalable hasta $5,100 USD/mes.</p>
-  </div>
-  <div class="faq-item">
-    <h4>¿Cómo accedo al curso?</h4>
-    <p class="muted">Acceso inmediato a módulos pregrabados + sesiones en vivo (aviso en grupo de WhatsApp).</p>
-  </div>
-  <div class="faq-item">
-    <h4>¿Cuándo comienza?</h4>
-    <p class="muted">Inmediatamente al inscribirte, las clases pregrabadas están disponibles. Sesiones en vivo programadas según grupo.</p>
+<!-- PRECIOS -->
+<section id="precios" class="fadeSlideUp">
+  <h2 class="section-title center">Paquetes disponibles</h2>
+
+  <div class="price-grid">
+
+    <!-- BASICO -->
+    <div class="price-card">
+      <h3>Paquete Básico</h3>
+      <div class="price-price">$2,997 MXN</div>
+      <ul class="muted">
+        <li>Acceso a todos los videos</li>
+        <li>Acceso a todos los manuales</li>
+        <li>Clases en vivo*</li>
+        <li>Actualizaciones incluidas</li>
+      </ul>
+      <a class="btn btn-main" href="https://buy.stripe.com/dRm4gAevc5Hjc533T0ds402" target="_blank">Comprar paquete básico</a>
+    </div>
+
+    <!-- INTERMEDIO -->
+    <div class="price-card">
+      <h3>Paquete Intermedio</h3>
+      <div class="price-price">$3,997 MXN</div>
+      <ul class="muted">
+        <li>Todo lo del paquete básico</li>
+        <li>Grupo privado de WhatsApp o Telegram</li>
+        <li>Sesiones grupales por mes</li>
+      </ul>
+      <a class="btn btn-main" href="https://buy.stripe.com/9B6dRa0Emc5HfhfexEds404" target="_blank">Comprar paquete intermedio</a>
+    </div>
+
   </div>
 </section>
 
-<!-- CTA final -->
+<!-- CTA FINAL -->
 <section class="fadeSlideUp center" style="margin:24px 0">
-  <a class="btn btn-main" href="https://buy.stripe.com/00w00kbj0d9L7ONahods401?utm_source=web&utm_medium=button&utm_campaign=lanzamiento_taller&utm_content=boton3">✅ Reservar mi lugar ahora</a>
+  <a class="btn btn-main" href="#precios">Elegir mi paquete ahora</a>
 </section>
 
 </div>
 
 <!-- Floating CTA -->
 <div class="floating">
-<a href="https://buy.stripe.com/00w00kbj0d9L7ONahods401?utm_source=web&utm_medium=button&utm_campaign=lanzamiento_taller&utm_content=boton4"><i class="fa-solid fa-bolt"></i> Reservar</a>
+<a href="#precios"><i class="fa-solid fa-bolt"></i> Ver opciones</a>
 </div>
 
 <script>
@@ -225,4 +245,3 @@ updateCountdown();
 
 </body>
 </html>
-
