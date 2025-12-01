@@ -1,134 +1,213 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Raúlix Campos — Cursos de Alarmas</title>
-  <meta name="description" content="Cursos de alarmas — Básico e Intermedio. Acceso de por vida, comunidad y sesiones Q&A.">
-  <meta name="theme-color" content="#0f172a">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taller de Alarmas | Acceso Completo</title>
 
-  <style>
-    :root{
-      --bg:#0b1220;
-      --card:#0f172a;
-      --accent:#06b6d4;
-      --muted:#94a3b8;
-      --radius:18px;
-      --maxw:720px;
-      --gap:16px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color-scheme: dark;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;background:linear-gradient(180deg,var(--bg),#07101a);
-      -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
-    }
+<style>
+/* -------------------------
+   ESTILOS BASE
+------------------------- */
+body {
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
 
-    .wrap{width:100%;max-width:var(--maxw);}
-    .card{
-      background:rgba(255,255,255,0.03);border-radius:var(--radius);padding:28px;border:1px solid rgba(255,255,255,0.05);
-      display:flex;flex-direction:column;gap:24px;align-items:center
-    }
-    .avatar{width:110px;height:110px;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,0.08)}
-    .avatar img{width:100%;height:100%;object-fit:cover}
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: auto;
+}
 
-    h1{margin:0;font-size:24px}
-    h2{margin:0;font-size:20px;text-align:center;margin-top:12px}
-    p{margin:0;color:var(--muted);font-size:15px;text-align:center}
+/* -------------------------
+   HERO
+------------------------- */
+.hero {
+    text-align: center;
+    padding: 50px 20px 20px;
+}
+.hero h1 {
+    font-size: 42px;
+    background: linear-gradient(90deg,#FFD700,#ff4d9d,#8f57ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+.hero p {
+    font-size: 20px;
+    color: #cdd1d6;
+}
 
-    .prices{width:100%;display:flex;flex-direction:column;gap:24px;margin-top:8px}
-    .plan{
-      background:rgba(255,255,255,0.04);padding:20px;border-radius:16px;border:1px solid rgba(255,255,255,0.06);
-      display:flex;flex-direction:column;gap:12px
-    }
-    .plan-title{font-size:18px;font-weight:600}
-    .price{font-size:24px;font-weight:700;margin-top:4px}
-    .plan ul{margin:0;padding-left:18px;color:var(--muted)}
+.btn {
+    display: inline-block;
+    padding: 15px 24px;
+    background: #ffd000;
+    color: #000;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 18px;
+}
 
-    .btn{display:inline-block;text-decoration:none;padding:14px 18px;border-radius:14px;background:var(--accent);color:black;font-weight:600;text-align:center;margin-top:6px}
+/* -------------------------
+   VIDEO PREVIEW
+------------------------- */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin: 40px 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+}
+.video-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
 
-    .testis{width:100%;display:flex;flex-direction:column;gap:16px;margin-top:12px}
-    .factura{
-      background:rgba(255,255,255,0.03);padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,0.05);
-      font-size:14px;color:var(--muted)
-    }
+/* -------------------------
+   CARRUSEL INTERIOR DEL TALLER
+------------------------- */
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 24px;
+    padding: 20px 0;
+}
+.carousel::-webkit-scrollbar { height: 12px; }
+.carousel::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+}
+.carousel-item {
+    flex: 0 0 90%;
+    scroll-snap-align: center;
+}
+.carousel-item img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
 
-    @media (max-width:520px){.card{padding:20px}.avatar{width:90px;height:90px;border-radius:18px}}
-  </style>
+/* -------------------------
+   FACTURAS Y COBROS (NO TOCADO)
+------------------------- */
+.facturas img {
+    width: 100%;
+    border-radius: 16px;
+    margin-bottom: 30px;
+}
+
+/* -------------------------
+   PLANES
+------------------------- */
+.pricing {
+    background: #151515;
+    padding: 50px 20px;
+    border-radius: 22px;
+    margin-bottom: 50px;
+}
+.pricing h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+.plan {
+    background: #1e1e1e;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+}
+.plan h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+.plan p {
+    font-size: 18px;
+    color: #d2d2d2;
+}
+
+/* -------------------------
+   FOOTER
+------------------------- */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #aaa;
+    margin-top: 30px;
+}
+</style>
+
 </head>
 <body>
-  <main class="wrap">
 
-    <section class="card">
-      <div class="avatar">
-        <img src="avatar.jpg" alt="Raúlix" onerror="this.src='https://via.placeholder.com/300x300?text=Raulix'">
-      </div>
+<div class="container">
 
-      <h1>Raúlix Campos</h1>
-      <p>El entrenamiento más accesible para iniciar en instalaciones de alarmas y ganar ingresos reales.</p>
+<!-- HERO -->
+<section class="hero">
+    <h1>Taller Completo de Alarmas</h1>
+    <p>Aprende instalación, configuración, negocio, monitoreo y automatización con acceso de por vida.</p>
+    <a href="https://subscribepage.io/sghkcF" class="btn">Entrar al Taller</a>
+</section>
 
-      <h2>Elige tu versión del curso</h2>
-
-      <div class="prices">
-
-        <div class="plan">
-          <div class="plan-title">Básico — Acceso de por vida</div>
-          <div class="price">$2,997 MXN</div>
-          <ul>
-            <li>Todos los videos del curso</li>
-            <li>Acceso permanente</li>
-            <li>Ideal para iniciar</li>
-          </ul>
-          <a class="btn" href="#" target="_blank">Comprar Básico</a>
-        </div>
-
-        <div class="plan">
-          <div class="plan-title">Intermedio — Comunidad + Q&A</div>
-          <div class="price">$3,997 MXN</div>
-          <ul>
-            <li>Todo lo del Básico</li>
-            <li>Sesión grupal mensual Q&A</li>
-            <li>Grupo privado (WhatsApp o Telegram)</li>
-          </ul>
-          <a class="btn" href="#" target="_blank">Comprar Intermedio</a>
-        </div>
-
-      </div>
-
-      <h2>Pruebas reales de cobros de monitoreo</h2>
-      <p>Estas son capturas 100% reales de facturación mensual de sistemas instalados.</p>
-
-      <div class="testis">
-        <div class="factura">[Aquí subirás captura 1]</div>
-        <div class="factura">[Aquí subirás captura 2]</div>
-        <div class="factura">[Aquí subirás captura 3]</div>
-      </div>
-
-      <p style="font-size:12px;color:var(--muted);margin-top:18px">© 2025 Raúlix Campos — Página publicada con GitHub Pages</p>
-    </section>
-
-    <!-- Video Preview Section -->
-  <section class="video-preview">
-    <h2>Vista rápida del curso (video)</h2>
-    <p>Mira este recorrido por dentro del curso para ver exactamente lo que recibirás.</p>
-    <!-- Reemplaza el enlace del video por tu URL de YouTube o archivo MP4 -->
+<!-- VIDEO PREVIEW -->
+<section>
+    <h2 style="text-align:center;font-size:30px;margin-top:40px;">🎥 Vista previa real del taller por dentro</h2>
     <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/XBd0Dz4whIw" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/XBd0Dz4whIw" allowfullscreen></iframe>
     </div>
-  </section>
+</section>
 
-  <!-- Capturas del Interior del Taller -->
-  <section class="course-screenshots">
-    <h2>Así se ve por dentro el Taller</h2>
-    <p>Una vista clara y grande de todo lo que recibirás al entrar.</p>
-    <div class="screenshot-gallery">
-      <!-- Reemplaza estas imágenes con tus capturas reales del interior del taller -->
-      <img src="taller1.jpg" alt="Vista del módulo del negocio" class="screenshot-large">
-      <img src="taller2.jpg" alt="Vista de las clases técnicas" class="screenshot-large">
-      <img src="taller3.jpg" alt="Manuales paso a paso" class="screenshot-large">
+<!-- CARRUSEL DEL INTERIOR DEL TALLER -->
+<section>
+    <h2 style="text-align:center;font-size:30px;">📸 Así se ve el taller por dentro</h2>
+    <p style="color:#cdd1d6;text-align:center;margin-bottom:20px;font-size:18px;">
+        Manuales, módulos técnicos, clases en vivo y recursos de negocio.
+    </p>
+    <div class="carousel">
+        <div class="carousel-item"><img src="assets/img/taller1.jpg"></div>
+        <div class="carousel-item"><img src="assets/img/taller2.jpg"></div>
+        <div class="carousel-item"><img src="assets/img/taller3.jpg"></div>
     </div>
-  </section>
-</main>
+</section>
+
+<!-- FACTURAS Y COBROS — SIN MOVER NADA -->
+<section>
+    <h2 style="text-align:center;font-size:30px;margin-top:60px;">💰 Facturas y Cobros Reales</h2>
+    <div class="facturas">
+        <img src="assets/img/factura1.jpg">
+        <img src="assets/img/factura2.jpg">
+        <img src="assets/img/factura3.jpg">
+    </div>
+</section>
+
+<!-- PLANES -->
+<section class="pricing">
+    <h2>Planes del Taller</h2>
+
+    <div class="plan">
+        <h3>Básico – $2,997 MXN</h3>
+        <p>Acceso a todos los videos + manuales + material para principiantes.</p>
+    </div>
+
+    <div class="plan">
+        <h3>Intermedio – $3,997 MXN</h3>
+        <p>Todo lo básico + sesión grupal mensual + comunidad privada.</p>
+    </div>
+</section>
+
+<footer>
+    © 2025 Taller de Alarmas – Raúl Campos
+</footer>
+
+</div>
 </body>
 </html>
