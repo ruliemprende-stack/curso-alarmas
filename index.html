@@ -1,201 +1,171 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Taller de Alarmas | Acceso Completo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Sistemas de Alarma – Taller Completo</title>
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #0f0f0f;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-}
-.container {
-    width: 90%;
-    max-width: 1050px;
-    margin: auto;
-}
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0; padding: 0;
+        background: #f6f6f6;
+        color: #222;
+    }
 
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 50px 20px 20px;
-}
-.hero h1 {
-    font-size: 42px;
-    background: linear-gradient(90deg,#FFD700,#ff4d9d,#8f57ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 10px;
-}
-.hero p {
-    font-size: 20px;
-    color: #cdd1d6;
-}
+    header {
+        background: black;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+    }
 
-.btn {
-    display: inline-block;
-    padding: 15px 24px;
-    background: #ffd000;
-    color: #000;
-    text-decoration: none;
-    border-radius: 12px;
-    font-weight: bold;
-    margin-top: 20px;
-    font-size: 18px;
-}
+    h1, h2 {
+        margin: 0;
+        padding: 10px 0;
+    }
 
-/* VIDEO */
-.video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    margin: 40px 0;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 20px 45px rgba(0,0,0,0.5);
-}
-.video-container iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
+    .container {
+        width: 90%;
+        max-width: 1050px;
+        margin: auto;
+        padding: 30px 0;
+    }
 
-/* CARRUSEL */
-.carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 24px;
-    padding: 20px 0;
-}
-.carousel::-webkit-scrollbar { height: 12px; }
-.carousel::-webkit-scrollbar-thumb {
-    background: #555;
-    border-radius: 10px;
-}
-.carousel-item {
-    flex: 0 0 90%;
-    scroll-snap-align: center;
-}
-.carousel-item img {
-    width: 100%;
-    border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
-}
+    .pricing-card {
+        background: white;
+        padding: 25px;
+        margin-bottom: 25px;
+        border-radius: 12px;
+        box-shadow: 0 0 12px rgba(0,0,0,0.12);
+    }
 
-/* FACTURAS */
-.facturas img {
-    width: 100%;
-    border-radius: 16px;
-    margin-bottom: 30px;
-}
+    .btn-comprar {
+        display: block;
+        background: #ff8800;
+        color: white;
+        padding: 14px;
+        text-align: center;
+        margin: 12px 0;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .btn-comprar:hover { background: #e06e00; }
 
-/* PRICING */
-.pricing {
-    background: #151515;
-    padding: 50px 20px;
-    border-radius: 22px;
-    margin-bottom: 50px;
-}
-.pricing h2 {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 30px;
-}
-.plan {
-    background: #1e1e1e;
-    padding: 25px;
-    border-radius: 18px;
-    margin-bottom: 20px;
-}
-.plan h3 {
-    font-size: 26px;
-    margin-bottom: 10px;
-}
-.plan p {
-    font-size: 18px;
-    color: #d2d2d2;
-}
+    /* ---- CARRUSEL TIPO TIKTOK ---- */
+    .carousel {
+        display: flex;
+        overflow-x: auto;
+        gap: 14px;
+        padding-bottom: 10px;
+        scroll-snap-type: x mandatory;
+    }
 
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #aaa;
-    margin-top: 30px;
-}
+    .carousel img {
+        flex: 0 0 85%;
+        max-height: 380px;
+        object-fit: cover;
+        border-radius: 10px;
+        scroll-snap-align: center;
+        box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+
+    /* PC: imágenes más pequeñas */
+    @media (min-width: 900px) {
+        .carousel img {
+            flex: 0 0 40%;
+            max-height: 360px;
+        }
+    }
+
+    iframe {
+        width: 100%;
+        height: 350px;
+        border-radius: 12px;
+        margin-top: 20px;
+    }
+
+    footer {
+        padding: 40px;
+        text-align: center;
+        color: #666;
+    }
 </style>
 
 </head>
 <body>
 
+<header>
+    <h1>Curso Completo de Sistemas de Alarma</h1>
+    <p>Aprende a instalar, vender, dar servicio y generar ingresos recurrentes</p>
+</header>
+
 <div class="container">
 
-<!-- HERO -->
-<section class="hero">
-    <h1>Taller Completo de Alarmas</h1>
-    <p>Aprende instalación, configuración, negocio, monitoreo y automatización con acceso de por vida.</p>
-</section>
+    <!-- VIDEO PREVIEW -->
+    <h2>Vista previa del taller por dentro</h2>
+    <iframe src="https://www.youtube.com/embed/XBd0Dz4whIw" allowfullscreen></iframe>
 
-<!-- VIDEO PREVIEW -->
-<section>
-    <h2 style="text-align:center;font-size:30px;margin-top:40px;">🎥 Vista previa real del taller por dentro</h2>
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/XBd0Dz4whIw" allowfullscreen></iframe>
+    <!-- PLANES -->
+    <h2 style="margin-top:50px;">Elige tu versión</h2>
+
+    <div class="pricing-card">
+        <h3>Plan Básico – $2,997 MXN</h3>
+        <p>Acceso a todos los videos. Acceso de por vida. Todo lo esencial para iniciar en el negocio.</p>
+
+        <a class="btn-comprar"
+           href="https://buy.stripe.com/dRm4gAevc5Hjc533T0ds402">
+           Comprar Plan Básico – $2,997 MXN
+        </a>
     </div>
-</section>
 
-<!-- CARRUSEL INTERIOR DEL TALLER -->
-<section>
-    <h2 style="text-align:center;font-size:30px;">📸 Así se ve el taller por dentro</h2>
-    <p style="color:#cdd1d6;text-align:center;margin-bottom:20px;font-size:18px;">
-        Manuales, módulos técnicos, clases en vivo y recursos de negocio.
-    </p>
+    <div class="pricing-card">
+        <h3>Plan Intermedio – $3,997 MXN</h3>
+        <p>Incluye todo lo básico + sesión grupal mensual Q&A + grupo privado (WhatsApp o Telegram).</p>
 
+        <a class="btn-comprar"
+           href="https://buy.stripe.com/9B6dRa0Emc5HfhfexEds404">
+           Comprar Plan Intermedio – $3,997 MXN
+        </a>
+    </div>
+
+    <!-- FACTURAS / VENTAS -->
+    <h2 style="margin-top:50px;">Evidencias de ventas recientes</h2>
     <div class="carousel">
-        <div class="carousel-item"><img src="images/taller1.jpg"></div>
-        <div class="carousel-item"><img src="images/taller2.jpg"></div>
-        <div class="carousel-item"><img src="images/taller3.png"></div>
-    </div>
-</section>
-
-<!-- FACTURAS Y COBROS -->
-<section>
-    <h2 style="text-align:center;font-size:30px;margin-top:60px;">💰 Facturas y Cobros Reales</h2>
-    <div class="facturas">
         <img src="images/collage1.jpg">
         <img src="images/collage2.jpg">
         <img src="images/collage3.jpg">
+    </div>
+
+    <!-- INGRESOS RECURRENTES -->
+    <h2 style="margin-top:60px; text-align:center;">
+        Ingresos Recurrentes Mes a Mes por Servicios de Monitoreo
+    </h2>
+
+    <div class="carousel">
         <img src="images/monitoreo1.jpg">
         <img src="images/monitoreo2.jpg">
         <img src="images/monitoreo3.jpg">
     </div>
-</section>
 
-<!-- PLANES -->
-<section class="pricing">
-    <h2>Planes del Taller</h2>
+    <!-- CAPTURAS INTERNAS DEL TALLER -->
+    <h2 style="margin-top:60px; text-align:center;">
+        Así se ve por dentro el taller completo
+    </h2>
 
-    <div class="plan">
-        <h3>Básico – $2,997 MXN</h3>
-        <p>Acceso a todos los videos + manuales + material para principiantes.</p>
-        <a href="#" class="btn">Comprar Básico</a>
+    <div class="carousel">
+        <img src="images/taller1.jpg">
+        <img src="images/taller2.jpg">
+        <img src="images/taller3.png">
     </div>
-
-    <div class="plan">
-        <h3>Intermedio – $3,997 MXN</h3>
-        <p>Todo lo básico + sesión grupal mensual + comunidad privada.</p>
-        <a href="#" class="btn">Comprar Intermedio</a>
-    </div>
-</section>
-
-<footer>
-    © 2025 Taller de Alarmas – Raúl Campos
-</footer>
 
 </div>
+
+<footer>
+    © 2025 – Curso Completo de Alarmas. Todos los derechos reservados.
+</footer>
+
 </body>
 </html>
