@@ -6,9 +6,6 @@
 <title>Taller de Alarmas | Acceso Completo</title>
 
 <style>
-/* -------------------------
-   ESTILOS BASE
-------------------------- */
 body {
     font-family: Arial, sans-serif;
     background: #0f0f0f;
@@ -16,16 +13,13 @@ body {
     margin: 0;
     padding: 0;
 }
-
 .container {
     width: 90%;
     max-width: 1050px;
     margin: auto;
 }
 
-/* -------------------------
-   HERO
-------------------------- */
+/* HERO */
 .hero {
     text-align: center;
     padding: 50px 20px 20px;
@@ -54,9 +48,7 @@ body {
     font-size: 18px;
 }
 
-/* -------------------------
-   VIDEO PREVIEW
-------------------------- */
+/* VIDEO */
 .video-container {
     position: relative;
     width: 100%;
@@ -72,9 +64,7 @@ body {
     height: 100%;
 }
 
-/* -------------------------
-   CARRUSEL INTERIOR DEL TALLER
-------------------------- */
+/* CARRUSEL */
 .carousel {
     display: flex;
     overflow-x: auto;
@@ -97,18 +87,14 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.45);
 }
 
-/* -------------------------
-   FACTURAS Y COBROS (NO TOCADO)
-------------------------- */
+/* FACTURAS */
 .facturas img {
     width: 100%;
     border-radius: 16px;
     margin-bottom: 30px;
 }
 
-/* -------------------------
-   PLANES
-------------------------- */
+/* PRICING */
 .pricing {
     background: #151515;
     padding: 50px 20px;
@@ -135,9 +121,6 @@ body {
     color: #d2d2d2;
 }
 
-/* -------------------------
-   FOOTER
-------------------------- */
 footer {
     text-align: center;
     padding: 30px;
@@ -155,7 +138,6 @@ footer {
 <section class="hero">
     <h1>Taller Completo de Alarmas</h1>
     <p>Aprende instalación, configuración, negocio, monitoreo y automatización con acceso de por vida.</p>
-    <a href="https://subscribepage.io/sghkcF" class="btn">Entrar al Taller</a>
 </section>
 
 <!-- VIDEO PREVIEW -->
@@ -166,26 +148,30 @@ footer {
     </div>
 </section>
 
-<!-- CARRUSEL DEL INTERIOR DEL TALLER -->
+<!-- CARRUSEL INTERIOR DEL TALLER -->
 <section>
     <h2 style="text-align:center;font-size:30px;">📸 Así se ve el taller por dentro</h2>
     <p style="color:#cdd1d6;text-align:center;margin-bottom:20px;font-size:18px;">
         Manuales, módulos técnicos, clases en vivo y recursos de negocio.
     </p>
+
     <div class="carousel">
-        <div class="carousel-item"><img src="assets/img/taller1.jpg"></div>
-        <div class="carousel-item"><img src="assets/img/taller2.jpg"></div>
-        <div class="carousel-item"><img src="assets/img/taller3.jpg"></div>
+        <div class="carousel-item"><img src="images/taller1.jpg"></div>
+        <div class="carousel-item"><img src="images/taller2.jpg"></div>
+        <div class="carousel-item"><img src="images/taller3.png"></div>
     </div>
 </section>
 
-<!-- FACTURAS Y COBROS — SIN MOVER NADA -->
+<!-- FACTURAS Y COBROS -->
 <section>
     <h2 style="text-align:center;font-size:30px;margin-top:60px;">💰 Facturas y Cobros Reales</h2>
     <div class="facturas">
-        <img src="assets/img/factura1.jpg">
-        <img src="assets/img/factura2.jpg">
-        <img src="assets/img/factura3.jpg">
+        <img src="images/collage1.jpg">
+        <img src="images/collage2.jpg">
+        <img src="images/collage3.jpg">
+        <img src="images/monitoreo1.jpg">
+        <img src="images/monitoreo2.jpg">
+        <img src="images/monitoreo3.jpg">
     </div>
 </section>
 
@@ -196,11 +182,13 @@ footer {
     <div class="plan">
         <h3>Básico – $2,997 MXN</h3>
         <p>Acceso a todos los videos + manuales + material para principiantes.</p>
+        <a href="#" class="btn">Comprar Básico</a>
     </div>
 
     <div class="plan">
         <h3>Intermedio – $3,997 MXN</h3>
         <p>Todo lo básico + sesión grupal mensual + comunidad privada.</p>
+        <a href="#" class="btn">Comprar Intermedio</a>
     </div>
 </section>
 
