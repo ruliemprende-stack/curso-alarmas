@@ -6,77 +6,105 @@
     <title>Curso Sistemas de Alarma – Taller Completo</title>
 
 <style>
+    /* ---- ESTILO GENERAL ---- */
     body {
-        font-family: Arial, sans-serif;
-        margin: 0; padding: 0;
-        background: #f6f6f6;
-        color: #222;
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(135deg, #0a0a0f, #0f1a2b, #0a0a10);
+        color: #e7e7e7;
+        background-size: 300% 300%;
+        animation: gradientShift 15s ease infinite;
     }
 
-    header {
-        background: black;
-        color: white;
-        padding: 40px 20px;
-        text-align: center;
+    @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
     }
 
     h1, h2 {
-        margin: 0;
-        padding: 10px 0;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        color: #00eaff;
+        text-shadow: 0 0 12px rgba(0, 238, 255, 0.6);
+    }
+
+    header {
+        text-align: center;
+        padding: 45px 20px;
+        background: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid rgba(0,255,255,0.15);
     }
 
     .container {
-        width: 90%;
-        max-width: 1050px;
+        width: 92%;
+        max-width: 1100px;
         margin: auto;
-        padding: 30px 0;
+        padding: 40px 0;
     }
 
+    /* --- TARJETAS PLANES --- */
     .pricing-card {
-        background: white;
+        background: rgba(0, 0, 0, 0.45);
+        border: 1px solid rgba(0,255,255,0.18);
         padding: 25px;
+        border-radius: 18px;
         margin-bottom: 25px;
-        border-radius: 12px;
-        box-shadow: 0 0 12px rgba(0,0,0,0.12);
+        box-shadow: 0 0 20px rgba(0,255,255,0.08);
+        backdrop-filter: blur(4px);
     }
 
+    .pricing-card h3 {
+        color: #00eaff;
+        text-shadow: 0 0 10px rgba(0,255,255,0.4);
+    }
+
+    /* ---- BOTÓN NEÓN ---- */
     .btn-comprar {
         display: block;
-        background: #ff8800;
-        color: white;
-        padding: 14px;
         text-align: center;
-        margin: 12px 0;
-        border-radius: 8px;
-        text-decoration: none;
+        padding: 15px;
+        margin-top: 15px;
+        background: #00eaff;
+        color: #001318;
+        font-size: 20px;
         font-weight: bold;
-        font-size: 18px;
+        border-radius: 10px;
+        text-decoration: none;
+        box-shadow: 0 0 18px #00eaff, inset 0 0 12px #0099aa;
+        transition: 0.3s;
     }
-    .btn-comprar:hover { background: #e06e00; }
 
-    /* ---- CARRUSEL TIPO TIKTOK ---- */
+    .btn-comprar:hover {
+        background: #00ffff;
+        box-shadow: 0 0 25px #00eaff, inset 0 0 20px #00ffff;
+    }
+
+    /* ---- CARRUSEL ---- */
     .carousel {
         display: flex;
         overflow-x: auto;
         gap: 14px;
         padding-bottom: 10px;
         scroll-snap-type: x mandatory;
+        margin-top: 15px;
     }
 
     .carousel img {
         flex: 0 0 85%;
-        max-height: 380px;
+        max-height: 330px;
+        border-radius: 12px;
         object-fit: cover;
-        border-radius: 10px;
         scroll-snap-align: center;
-        box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        border: 1px solid rgba(0,255,255,0.15);
+        box-shadow: 0 0 20px rgba(0,255,255,0.08);
     }
 
-    /* PC: imágenes más pequeñas */
     @media (min-width: 900px) {
         .carousel img {
-            flex: 0 0 40%;
-            max-height: 360px;
+            flex: 0 0 38%;
+            max-height: 350px;
         }
     }
 
@@ -84,13 +112,16 @@
         width: 100%;
         height: 350px;
         border-radius: 12px;
-        margin-top: 20px;
+        border: 1px solid rgba(0,255,255,0.15);
+        box-shadow: 0 0 15px rgba(0,255,255,0.08);
+        margin-top: 18px;
     }
 
     footer {
-        padding: 40px;
         text-align: center;
-        color: #666;
+        padding: 40px 0;
+        color: #7bdfff;
+        opacity: 0.7;
     }
 </style>
 
@@ -99,7 +130,9 @@
 
 <header>
     <h1>Curso Completo de Sistemas de Alarma</h1>
-    <p>Aprende a instalar, vender, dar servicio y generar ingresos recurrentes</p>
+    <p style="color:#a8f7ff; text-shadow:0 0 10px #00eaff;">
+        Aprende a instalar, vender, dar servicio y generar ingresos recurrentes
+    </p>
 </header>
 
 <div class="container">
